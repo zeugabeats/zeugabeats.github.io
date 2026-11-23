@@ -13,8 +13,6 @@ header .logo span{color:#0095F6}
 .h-right{display:flex;gap:8px;align-items:center}
 .cartBtn{background:#0095F6;color:#fff;border:0;padding:9px 12px;border-radius:0;font-weight:bold;cursor:pointer;font-size:13px}
 .supBtn{background:#fff;color:#000;border:0;padding:9px 12px;border-radius:0;font-weight:bold;cursor:pointer;font-size:13px;text-decoration:none}
-.tagline{text-align:center;color:#0095F6;font-weight:bold;font-size:13px;padding:10px 0 0}
-.subtag{text-align:center;color:#8ea3b8;font-size:12px;padding:2px 0 10px}
 .hero{text-align:center;padding:20px}
 .hero h2{font-size:26px}
 .hero h2 span{color:#0095F6}
@@ -90,30 +88,27 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 .licPickRow .rowTop span{color:#0095F6;font-weight:900;white-space:nowrap;text-align:right;font-size:13px}
 .licPickRow small{color:#8ea3b8;display:block;margin-top:4px;line-height:1.5}
 #readLicBox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.88);z-index:101;align-items:center;justify-content:center;padding:15px}
+#agreeBox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.88);z-index:102;align-items:center;justify-content:center;padding:15px}
+.agreeCheck{background:#060a12;border:1px solid #1e324a;padding:12px;margin:10px 0;text-align:left;font-size:13px;line-height:1.5}
+.agreeCheck input{width:auto;margin-right:8px}
 </style>
 </head>
 <body>
-
-<header><div class="logo">Zeuga<span> 🧢</span></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
-<div class="tagline"></div><div class="subtag"></div>
-
-<div class="hero"><h2>🔥 Fresh Beats <span>Out Now</span></h2><p>Preview free. Choose your license. Click Buy.<br></p></div>
-
+<header><div class="logo">Zeuga<span> 🧢</span></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20Business%20Enquiry">💬 Support</a></div></header>
+<div class="hero"><h2>🔥 Fresh Beats <span>Out Now</span></h2><p>Preview free. Choose your license. Click Buy.</p></div>
 <div class="beats">
 <div class="card"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200"><div class="info"><h3>Lagos Night</h3><span>Afrobeat • 112 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openLicensePicker('Lagos Night')">Buy</button><button class="add" onclick="addToCart('Lagos Night',20)">+ Cart</button></div></div></div>
 <div class="card"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200"><div class="info"><h3>Shayo</h3><span>Amapiano • 110 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openLicensePicker('Shayo')">Buy</button><button class="add" onclick="addToCart('Shayo',20)">+ Cart</button></div></div></div>
 <div class="card"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200"><div class="info"><h3>Cruise</h3><span>Afrobeat • 100 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openLicensePicker('Cruise')">Buy</button><button class="add" onclick="addToCart('Cruise',20)">+ Cart</button></div></div></div>
 </div>
-
 <div class="lic"><h2>Licensing <span>Info</span></h2><p class="sub">Prices start from $20 - Choose what fits you</p>
 <div class="lic-card"><h3>MP3 License</h3><div class="big">$20</div><div class="naira">₦30,200</div><small>Untagged MP3</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3 Only</li><li>• Distribution Limit 1,000</li><li>• 15,000 Audio Streams</li><li>• No Music Video</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openReadLicense('MP3')">📄 READ LICENSE</a><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
 <div class="lic-card"><h3>MP3 + WAV License</h3><div class="big">$35</div><div class="naira">₦52,850</div><small>Untagged MP3 + WAV</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3 & WAV</li><li>• Distribution Limit 2,500</li><li>• 150,000 Audio Streams</li><li>• 150,000 Video Streams</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openReadLicense('WAV')">📄 READ LICENSE</a><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
 <div class="lic-card"><h3>Premium License</h3><div class="big">$70</div><div class="naira">₦105,700</div><small>Untagged MP3 + WAV</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3 & WAV</li><li>• Distribution Limit 5,000</li><li>• 500,000 Audio Streams</li><li>• 500,000 Video Streams</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openReadLicense('PREMIUM')">📄 READ LICENSE</a><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
 <div class="lic-card pop"><h3>⭐ POPULAR - Premium Plus</h3><div class="big">$100</div><div class="naira">₦151,000</div><small>Untagged MP3 + WAV + Stems</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3, WAV & Stems</li><li>• Distribution Limit 10,000</li><li>• 1,000,000 Audio Streams</li><li>• 1,000,000 Video Streams</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openReadLicense('PLUS')">📄 READ LICENSE</a><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
 <div class="lic-card"><h3>Unlimited License</h3><div class="big">$180</div><div class="naira">₦271,800</div><small>Untagged MP3 + WAV + Stems</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3, WAV & Stems</li><li>• Unlimited Distribution</li><li>• Unlimited Audio Streams</li><li>• Unlimited Video Streams</li><li>• Term does not expire</li></ul><a onclick="openReadLicense('UNLIMITED')">📄 READ LICENSE</a><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
-<div class="lic-card"><h3>Exclusive License</h3><div class="big">MAKE AN OFFER</div><small>Exclusive</small><ul><li>• Exclusive License</li><li>• Unlimited Units</li><li>• Beat Taken Down</li></ul><a onclick="openReadLicense('EXCLUSIVE')">📄 READ LICENSE</a><a href="https://wa.me/2349162002581?text=I%20want%20to%20make%20an%20offer%20for%20Exclusive%20License" style="background:#fff;color:#0095F6">MAKE AN OFFER</a></div>
+<div class="lic-card"><h3>Exclusive License</h3><div class="big">MAKE AN OFFER</div><small>Exclusive</small><ul><li>• Exclusive License</li><li>• Unlimited Units</li><li>• Beat Taken Down</li></ul><a onclick="openReadLicense('EXCLUSIVE')">📄 READ LICENSE</a><a href="https://wa.me/2349162002581?text=Business%20Enquiry%20-%20Exclusive%20License" style="background:#fff;color:#0095F6">MAKE AN OFFER</a></div>
 </div>
-
 <div class="section" id="studio">
 <h2>🎙️ Studio <span>Services</span></h2><p class="sub">Recording, Mixing & Mastering Also Available</p>
 <div class="label">✅ If You Buy Beat From Zeuga • Bede Inc (You Save Money)</div>
@@ -126,7 +121,6 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 <div class="s-card"><div class="s-top"><div><h3>🔊 Mastering</h3><p>Final polish for Spotify / song</p></div><div class="s-price">$25<small>₦37,750</small></div></div><button class="btn" onclick="openPay('Mastering',25)">Book</button></div>
 <div class="s-card"><div class="s-top"><div><h3>🔥 Full Service</h3><p>Record + Mix + Master / song • Save $15</p></div><div class="s-price">$80<small>₦120,800</small></div></div><button class="btn" onclick="openPay('Full Service',80)">Book</button></div>
 </div>
-
 <div class="section" id="custom">
 <h2>🎹 Custom <span>Beat</span></h2><p class="sub">Tell Zeuga the vibe you want, we will create it for you from scratch</p>
 <div class="s-card"><div class="s-top"><div><h3>Custom Beat - Basic</h3><p>1 beat • 2 revisions • MP3 + WAV</p></div><div class="s-price">$120<small>₦181,200</small></div></div><button class="btn" onclick="openPay('Custom Beat Basic',120)">Order Basic $120</button></div>
@@ -137,31 +131,43 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 <textarea placeholder="Tell Zeuga the vibe you want..."></textarea>
 <button class="btn" onclick="alert('Request sent! Zeuga will contact you on WhatsApp')">Request Service</button>
 </div>
-
 <div class="section" id="buy">
 <h2>How To <span>Buy</span></h2><p class="sub">Simple and easy</p>
 <div class="s-card"><h3>1. Choose Beat / Service</h3><p>Press Buy or + Cart, the payment box will open</p></div>
 <div class="s-card"><h3>2. Pay Now - Access Bank Plc</h3><p>Direct Transfer • Complete within 30 minutes • Send receipt on WhatsApp</p></div>
 <div class="s-card"><h3>3. Receive Beat</h3><p>Via WhatsApp / Email — within 24h</p></div>
+<div class="s-card"><h3>4. Download Agreement, Sign & Send For Confirmation</h3><p>Download the Beat License Agreement, complete Page 1, sign Page 2 and return a copy with proof of payment for confirmation. Upon confirmation of payment, the agreement shall be deemed fully executed.</p></div>
 <button class="btn" onclick="openPay('General Payment',20)">Pay Now - Access Bank Plc</button>
 <a class="btn btn-green" href="https://wa.me/2349162002581">WhatsApp Zeuga - 09162002581</a>
 <a class="btn" style="background:#fff;color:#0095F6" href="mailto:zeugaofficial@gmail.com">Email: zeugaofficial@gmail.com</a>
 </div>
-
+<div class="section" id="deal">
+<h2>Business <span>Deal</span></h2><p class="sub">Business Conversation Only</p>
+<div class="s-card"><h3>Deal Summary</h3><p style="color:#fff;font-size:14px;line-height:1.7">Beat: <span id="dealBeat">To be confirmed</span><br>License: <span id="dealLicense">To be confirmed</span><br>Amount: <span id="dealAmount">To be confirmed</span><br>Payment: Access Bank Plc - Chigemezu Bede Amadi - 0104817244<br>Delivery: WhatsApp / Email - Within 24h after confirmation<br>Agreement: Beat License Agreement - Sections 1-12 apply</p></div>
+<div class="s-card"><h3>Business Conversation</h3><p>Business conversation only. Deal details only.</p>
+<input id="dealName" placeholder="Full Name">
+<input id="dealBeatInput" placeholder="Beat Name">
+<select id="dealLicenseInput"><option>MP3 License - $20 / ₦30,200</option><option>MP3 + WAV License - $35 / ₦52,850</option><option>Premium License - $70 / ₦105,700</option><option>Premium Plus License - $100 / ₦151,000</option><option>Unlimited License - $180 / ₦271,800</option><option>Exclusive License - Make An Offer</option></select>
+<input id="dealReceipt" placeholder="Transaction Reference / Receipt No">
+<textarea id="businessMsg" placeholder="Business Enquiry: Beat, License, Amount, Receipt."></textarea>
+<button class="btn btn-green" onclick="sendBusinessDeal()">Send Business Deal On WhatsApp</button>
+<button class="btn btn-outline" onclick="copyBusinessMsg()">Copy Business Message</button></div>
+<div class="s-card"><h3>Deal Terms</h3><p>1. Payment confirms deal.<br>2. No payment = No deal.<br>3. Agreement must be signed and returned with proof of payment.<br>4. Upon confirmation, licensed files shall be released.<br>5. All terms in Beat License Agreement apply.</p></div>
+</div>
 <div id="readLicBox"><div class="payInner" style="text-align:left">
 <h2 style="text-align:center">License Terms - <span id="readLicTitle">MP3</span></h2>
 <p id="readLicBody" style="font-size:13px;line-height:1.7;color:#cbd5e1;margin-top:12px;white-space:pre-line"></p>
+<button class="btn" onclick="downloadAgreement()">⬇️ DOWNLOAD FULL AGREEMENT</button>
 <button class="btn" onclick="closeReadLicense()">Close</button>
 </div></div>
-
 <div id="licPickBox"><div class="payInner">
 <h2>Choose License - <span id="licPickBeat">Beat</span></h2>
 <p style="color:#8ea3b8;font-size:13px;margin-top:6px">Select 1 of the 6 license deals before you proceed to payment.</p>
 <div id="licPickList"></div>
+<div class="agreeCheck"><label><input type="checkbox" id="agreeCheckBox"> I have read and agree to the ZEUGA Beat License Agreement. I understand ZEUGA retains 50% Publishing as Producer/Songwriter, and I must credit "Produced by ZEUGA".</label></div>
 <button class="btn" onclick="confirmLicense()">Continue to Payment →</button>
 <button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closeLicensePicker()">Close</button>
 </div></div>
-
 <div id="payBox"><div class="payInner">
 <h2>Pay Now - <span>Access Bank Plc</span></h2>
 <p style="color:#0095F6;font-weight:bold;font-size:13px;margin-top:4px">Where Sound Becomes Feeling</p>
@@ -176,7 +182,19 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 <button class="btn" id="restartBtn" style="display:none;background:#ff4444" onclick="restartTimer()">⏱️ Time Expired - Pay Again</button>
 <button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closePay()">Close</button>
 </div></div>
-
+<div id="agreeBox"><div class="payInner" style="text-align:left">
+<h2 style="text-align:center">Download Agreement <span>& Sign</span></h2>
+<p style="color:#8ea3b8;font-size:13px;margin-top:8px;text-align:center">Complete Page 1, sign Page 2 and return a copy with proof of payment for confirmation. Upon confirmation of payment, the agreement shall be deemed fully executed.</p>
+<input id="agBuyerName" placeholder="Your Full Name *">
+<input id="agStageName" placeholder="Your Stage Name *">
+<input id="agWhatsApp" placeholder="Your WhatsApp Number *">
+<input id="agEmail" placeholder="Your Email *">
+<input id="agReceipt" placeholder="Transaction Reference / Receipt No">
+<input id="agDate" type="date">
+<button class="btn" onclick="downloadAgreement()">⬇️ DOWNLOAD AGREEMENT</button>
+<button class="btn btn-green" onclick="sendAgreementWhatsApp()">📩 SEND DETAILS + RECEIPT TO ZEUGA ON WHATSAPP</button>
+<button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closeAgreeBox()">Close</button>
+</div></div>
 <div id="cartBox"><div class="payInner">
 <h2>🛒 Your <span>Cart</span></h2><p style="color:#8ea3b8;font-size:13px;margin-top:6px">Your selected beats. Prices are fixed.</p>
 <div id="cartList"></div>
@@ -185,9 +203,7 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 <button class="btn" onclick="clearCart()">Clear Cart</button>
 <button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closeCart()">Close</button>
 </div></div>
-
-<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=I%20need%20custom%20beat">Chat Zeuga on WhatsApp</a><br><br>© 2026 Zeuga • Bede Inc<br>Where Sound Becomes Feeling<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://tiktok.com/@zeugaofficial">@zeugaofficial</a></footer>
-
+<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=Business%20Enquiry%20-%20Custom%20Beat">Chat Zeuga on WhatsApp</a><br><br>© 2026 Zeuga • Bede Inc<br>Where Sound Becomes Feeling<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://tiktok.com/@zeugaofficial">@zeugaofficial</a><br><br><a href="#" onclick="openReadLicense('MP3');return false;">License Agreement</a> • <a href="#" onclick="openAgreeBox();return false;">Download Agreement</a></footer>
 <script>
 const RATE=1510;
 let cart=[]; let currentItem="Item"; let currentAmount=20; let timeLeft=1800; let timerInterval=null;
@@ -200,12 +216,105 @@ const LICENSES=[
 {name:"Exclusive License",usd:0,detail:"Exclusive • Unlimited Units • Beat Taken Down • MAKE AN OFFER"}
 ];
 const LICENSE_TERMS={
-MP3:`MP3 LICENSE - $20 / ₦30,200\nUntagged MP3\n\nWHAT YOU GET:\n- You will receive Untagged MP3 file only\n- Non-Exclusive License - Zeuga can still sell this same beat to another artist\n- 1 Producer Tag will remain on the beat\n\nWHAT YOU CAN DO:\n- Use the beat for 1 song only\n- Distribution Limit: 1,000 copies / sales\n- Audio Streams: 15,000 streams total for Spotify, Apple Music, Boomplay, Audiomack etc\n- Video Streams: 0 - You cannot use it for a monetized music video\n- Radio Airplay: 1 radio station, non-commercial only\n- Live Performance: Yes, you can perform the song live\n- You can post it on YouTube / Instagram / TikTok, but no monetization for video\n\nCREDIT:\n- You MUST credit: Prod. by Zeuga\n- Add the credit to the song title, description, and metadata\n\nWHAT YOU CANNOT DO:\n- You cannot resell, give, share or lease the beat to another person\n- You cannot use the beat for another song unless you buy another license\n- You cannot remove or change the producer tag\n- You cannot register the song for Content ID, BMI, ASCAP or any copyright organization\n- You cannot claim that you produced the beat\n- You cannot make a remake of the beat and sell it\n\nTERM & UPGRADE:\n- This license does not expire, but it will expire if you exceed the 1,000 distribution or 15,000 streams limit\n- If you exceed the limit, you MUST upgrade to a higher license\n- To upgrade, contact Zeuga on WhatsApp - you will only pay the difference`,
-WAV:`MP3 + WAV LICENSE - $35 / ₦52,850\nUntagged MP3 + WAV\n\nWHAT YOU GET:\n- You will receive Untagged MP3 + High Quality WAV file\n- Non-Exclusive License - Zeuga can still sell this same beat to another artist\n- 1 Producer Tag will remain on the beat\n\nWHAT YOU CAN DO:\n- Use the beat for 1 song only\n- Distribution Limit: 2,500 copies / sales\n- Audio Streams: 150,000 streams total for Spotify, Apple Music, Boomplay, Audiomack etc\n- Video Streams: 150,000 streams for 1 monetized music video on YouTube\n- Radio Airplay: Up to 2 radio stations\n- Live Performance: Yes, you can perform the song live, unlimited shows\n- You can post it on all streaming platforms, YouTube, Instagram, TikTok\n\nCREDIT:\n- You MUST credit: Prod. by Zeuga\n- Add the credit to the song title, description, and metadata\n\nWHAT YOU CANNOT DO:\n- You cannot resell, give, share or lease the beat to another person\n- You cannot use the beat for another song unless you buy another license\n- You cannot remove or change the producer tag\n- You cannot register the song for Content ID, BMI, ASCAP or any copyright organization unless you buy Exclusive\n- You cannot claim that you produced the beat\n- You cannot use the beat for TV, film, or advert without contacting Zeuga first\n\nTERM & UPGRADE:\n- This license does not expire, but it will expire if you exceed the 2,500 distribution or 150,000 streams limit\n- If you exceed the limit, you MUST upgrade to Premium or higher\n- To upgrade, contact Zeuga on WhatsApp - you will only pay the difference`,
-PREMIUM:`PREMIUM LICENSE - $70 / ₦105,700\nUntagged MP3 + WAV\n\nWHAT YOU GET:\n- You will receive Untagged MP3 + High Quality WAV file\n- Non-Exclusive License - Zeuga can still sell this same beat to another artist\n- 1 Producer Tag will remain on the beat\n\nWHAT YOU CAN DO:\n- Use the beat for 1 song only\n- Distribution Limit: 5,000 copies / sales\n- Audio Streams: 500,000 streams total for Spotify, Apple Music, Boomplay, Audiomack etc\n- Video Streams: 500,000 streams for 1 monetized music video on YouTube\n- Radio Airplay: Unlimited radio stations, commercial allowed\n- Live Performance: Yes, unlimited shows\n- You can post it on all streaming platforms, YouTube, Instagram, TikTok\n- You can do 1 radio interview / promo with the song\n\nCREDIT:\n- You MUST credit: Prod. by Zeuga\n- Add the credit to the song title, description, and metadata\n\nWHAT YOU CANNOT DO:\n- You cannot resell, give, share or lease the beat to another person\n- You cannot use the beat for another song unless you buy another license\n- You cannot remove or change the producer tag\n- You cannot register the song for Content ID, BMI, ASCAP or any copyright organization unless you buy Exclusive\n- You cannot claim that you produced the beat\n- You cannot use the beat for TV, film, or advert without contacting Zeuga first\n\nTERM & UPGRADE:\n- This license does not expire, but it will expire if you exceed the 5,000 distribution or 500,000 streams limit\n- If you exceed the limit, you MUST upgrade to Premium Plus or Unlimited\n- To upgrade, contact Zeuga on WhatsApp - you will only pay the difference`,
-PLUS:`PREMIUM PLUS LICENSE - $100 / ₦151,000\nPOPULAR - Untagged MP3 + WAV + STEMS\n\nWHAT YOU GET:\n- You will receive Untagged MP3 + WAV + STEMS / Trackouts (drums, bass, melody, etc separately)\n- Non-Exclusive License - Zeuga can still sell this same beat to another artist\n- 1 Producer Tag will remain on the beat\n\nWHAT YOU CAN DO:\n- Use the beat for 1 song only\n- Distribution Limit: 10,000 copies / sales\n- Audio Streams: 1,000,000 streams total for Spotify, Apple Music, Boomplay, Audiomack etc\n- Video Streams: 1,000,000 streams for 2 monetized music videos on YouTube\n- Radio Airplay: Unlimited radio stations, commercial allowed\n- Live Performance: Yes, unlimited shows\n- You can post it on all streaming platforms, YouTube, Instagram, TikTok\n- You can mix, arrange, and change the stems to fit your song\n- You can do radio and TV promo with the song\n\nCREDIT:\n- You MUST credit: Prod. by Zeuga\n- Add the credit to the song title, description, and metadata\n\nWHAT YOU CANNOT DO:\n- You cannot resell, give, share or lease the beat or stems to another person\n- You cannot use the beat for another song unless you buy another license\n- You cannot remove or change the producer tag\n- You cannot register the song for Content ID, BMI, ASCAP or any copyright organization unless you buy Exclusive\n- You cannot claim that you produced the beat\n- You cannot use the stems to create a new beat and sell it\n\nTERM & UPGRADE:\n- This license does not expire, but it will expire if you exceed the 10,000 distribution or 1,000,000 streams limit\n- If you exceed the limit, you MUST upgrade to Unlimited\n- To upgrade, contact Zeuga on WhatsApp - you will only pay the difference`,
-UNLIMITED:`UNLIMITED LICENSE - $180 / ₦271,800\nUntagged MP3 + WAV + STEMS\n\nWHAT YOU GET:\n- You will receive Untagged MP3 + WAV + STEMS / Trackouts\n- Non-Exclusive License - Zeuga can still sell this same beat to another artist, but you get unlimited usage for your 1 song\n- Term Does Not Expire\n\nWHAT YOU CAN DO:\n- Use the beat for 1 song only\n- Distribution: UNLIMITED - no limit for sales\n- Audio Streams: UNLIMITED - no limit for Spotify, Apple Music, Boomplay etc\n- Video Streams: UNLIMITED - for unlimited music videos\n- Radio Airplay: Unlimited, commercial allowed\n- Live Performance: Yes, unlimited shows\n- You can post it on all streaming platforms, YouTube, Instagram, TikTok, TV, radio\n- You can mix, arrange, and change the stems\n\nCREDIT:\n- You MUST credit: Prod. by Zeuga\n- Add the credit to the song title, description, and metadata\n\nWHAT YOU CANNOT DO:\n- You cannot resell, give, share or lease the beat or stems to another person\n- You cannot use the beat for another song unless you buy another license\n- You cannot remove or change the producer tag\n- You cannot register the song for Content ID, BMI, ASCAP unless you buy Exclusive\n- You cannot claim that you produced the beat\n- You cannot use the stems to create a new beat and sell it\n\nTERM & UPGRADE:\n- Term Does Not Expire - this license will last forever for your 1 song\n- If you want the beat to be totally yours, upgrade to Exclusive - Zeuga will take the beat down`,
-EXCLUSIVE:`EXCLUSIVE LICENSE - MAKE AN OFFER\nBeat Taken Down\n\nWHAT YOU GET:\n- You will receive Untagged MP3 + WAV + STEMS\n- Exclusive License - Zeuga will REMOVE the beat from the website, nobody else can buy it again\n- Unlimited Units, Unlimited Streams, Unlimited Everything\n\nWHAT YOU CAN DO:\n- Use the beat for unlimited songs\n- Distribution: Unlimited\n- Audio Streams: Unlimited\n- Video Streams: Unlimited\n- Radio, TV, Film, Advert: Yes, all allowed\n- You can register the song for Content ID, BMI, ASCAP\n- You can perform, sell, and monetize everywhere\n\nCREDIT:\n- You MUST credit: Prod. by Zeuga, unless you negotiate otherwise for Exclusive\n\nWHAT YOU CANNOT DO:\n- You cannot resell the beat itself as a beat to another producer / artist\n- You cannot claim that you produced the beat - Zeuga is still the producer\n\nHOW TO BUY:\n- Click MAKE AN OFFER on WhatsApp, tell Zeuga your offer, and you will negotiate`
+MP3:`BEAT LICENSE AGREEMENT - MP3 LICENSE - $20 / ₦30,200
+ZEUGA - MUSIC PRODUCER | ARTIST | MIX ENGINEER
+LICENSOR (Producer): Chigemezu Bede Amadi aka ZEUGA
+Phone / Email: 09162002581 / zeugaofficial@gmail.com
+LICENSEE (Buyer / Artist): [To be completed]
+1. THE BEAT - Beat Title: [Your Beat] Producer Tag: ZEUGA File: MP3 Only
+2. TYPE OF LICENSE: [X] MP3 LICENSE - $20 / ₦30,200 - Non-Exclusive - 1,000 Distribution - 15,000 Streams - No Video
+3. PAYMENT - Total Fee: ₦30,200 Method: Bank Transfer Bank: Access Bank Plc | Chigemezu Bede Amadi | 0104817244 | Rate: $1 = ₦1,510 Beat will NOT be released until full payment is received and receipt is confirmed. No payment = No license.
+4. RIGHTS: Record vocals, Release on Spotify, Apple Music, Boomplay, Audiomack, YouTube, TikTok, Perform live/radio, 1 music video, Monetize.
+5. RESTRICTIONS: Must NOT resell/lease beat, claim to be producer, remove Producer Tag, use for adverts/movies without agreement, use license for another beat.
+6. PRODUCER CREDIT: MUST credit "Produced by ZEUGA". Failure to credit = breach.
+7. ROYALTIES - 50% PRODUCER / SONGWRITER - 50% ARTIST: [X] Producer 50% / Artist 50% from Publishing / Songwriting. Producer (ZEUGA) is Songwriter/Composer for beat. Artist is Songwriter for lyrics/vocals. Artist MUST register ZEUGA as 50% songwriter with BMI, ASCAP, COSON, MCSN, PRS or any PRO and with distributor. License fee separate. Publishing separate forever. Master 100% to Artist, unless Exclusive negotiated differently.
+8. TERM & TERRITORY: Term: [ ] 2 Years [ ] 5 Years [ ] Unlimited Territory: Worldwide. If Buyer exceeds limit, MUST upgrade within 14 days.
+9. BREACH: Licensor may terminate immediately, request takedown, Licensee still owes payment, Licensor may take legal action.
+10. OWNERSHIP: ZEUGA remains original owner/creator unless FULL OWNERSHIP ticked.
+11. ENTIRE AGREEMENT: Entire agreement. Verbal/WhatsApp not valid unless added in writing and signed by both parties.
+12. EXECUTION & COUNTERSIGNATURE: This agreement is executed by the Licensor. The Licensee shall execute Page 2 and return a copy together with proof of payment for confirmation. Upon confirmation of payment, this agreement shall be deemed fully executed by both parties.
+SIGNATURES - PAGE 2: LICENSOR - ZEUGA: Chigemezu Bede Amadi | Signature: [Executed] | Date: ______ | LICENSEE - BUYER: Full Name (Print): ______ | Signature: ______ | Date: ______ | WITNESS (Optional): ______`,
+WAV:`BEAT LICENSE AGREEMENT - MP3 + WAV LICENSE - $35 / ₦52,850
+ZEUGA - MUSIC PRODUCER | ARTIST | MIX ENGINEER
+LICENSOR: Chigemezu Bede Amadi aka ZEUGA | 09162002581 / zeugaofficial@gmail.com
+1. THE BEAT - Beat Title: [Your Beat] File: MP3 + WAV Producer Tag: ZEUGA
+2. TYPE: [X] MP3 + WAV - $35 / ₦52,850 - Non-Exclusive - 2,500 Distribution - 150,000 Streams - 150,000 Video Streams
+3. PAYMENT: ₦52,850 | Access Bank Plc | Chigemezu Bede Amadi | 0104817244 | Rate: $1 = ₦1,510 | No payment = No license.
+4. RIGHTS: Record vocals, Release on Spotify, Apple, Boomplay, Audiomack, YouTube, TikTok, Perform live/radio, 1 music video, Monetize.
+5. RESTRICTIONS: Must NOT resell/lease, claim to be producer, remove Producer Tag, use for adverts/movies without agreement, use for another beat.
+6. CREDIT: MUST credit "Produced by ZEUGA".
+7. ROYALTIES - 50% PRODUCER / SONGWRITER - 50% ARTIST: Producer (ZEUGA) Songwriter/Composer for beat. Artist Songwriter for lyrics/vocals. Artist MUST register ZEUGA as 50% songwriter with BMI, ASCAP, COSON, MCSN, PRS or any PRO and with distributor. License fee separate. Publishing separate forever. Master 100% to Artist.
+8. TERM: [ ] 2 Years [ ] 5 Years [ ] Unlimited Territory: Worldwide. Exceed limit = MUST upgrade in 14 days.
+9. BREACH: Terminate immediately, takedown, still owes payment, legal action.
+10. OWNERSHIP: ZEUGA remains owner/creator unless FULL OWNERSHIP ticked.
+11. ENTIRE AGREEMENT: Entire agreement. Verbal/WhatsApp not valid unless added in writing and signed.
+12. EXECUTION & COUNTERSIGNATURE: This agreement is executed by the Licensor. The Licensee shall execute Page 2 and return a copy together with proof of payment for confirmation. Upon confirmation of payment, this agreement shall be deemed fully executed by both parties.
+SIGNATURES - PAGE 2: ZEUGA: Chigemezu Bede Amadi | Signature: [Executed] | Date: ______ | BUYER: Full Name: ______ | Signature: ______ | Date: ______ | WITNESS: ______`,
+PREMIUM:`BEAT LICENSE AGREEMENT - PREMIUM LICENSE - $70 / ₦105,700
+ZEUGA - MUSIC PRODUCER | ARTIST | MIX ENGINEER
+LICENSOR: Chigemezu Bede Amadi aka ZEUGA | 09162002581 / zeugaofficial@gmail.com
+1. THE BEAT - Beat Title: [Your Beat] File: MP3 + WAV Producer Tag: ZEUGA
+2. TYPE: [X] PREMIUM - $70 / ₦105,700 - Non-Exclusive - 5,000 Distribution - 500,000 Streams - 500,000 Video Streams
+3. PAYMENT: ₦105,700 | Access Bank Plc | Chigemezu Bede Amadi | 0104817244 | Rate: $1 = ₦1,510 | No payment = No license.
+4. RIGHTS: Record vocals, Release on Spotify, Apple, Boomplay, Audiomack, YouTube, TikTok, Perform live/radio, 1 music video, Monetize.
+5. RESTRICTIONS: Must NOT resell/lease, claim to be producer, remove Producer Tag, use for adverts/movies without agreement, use for another beat.
+6. CREDIT: MUST credit "Produced by ZEUGA".
+7. ROYALTIES - 50% PRODUCER / SONGWRITER - 50% ARTIST: Producer (ZEUGA) Songwriter/Composer for beat. Artist Songwriter for lyrics/vocals. Artist MUST register ZEUGA as 50% songwriter with BMI, ASCAP, COSON, MCSN, PRS or any PRO and with distributor. License fee separate. Publishing separate forever. Master 100% to Artist.
+8. TERM: [ ] 2 Years [ ] 5 Years [ ] Unlimited Territory: Worldwide. Exceed limit = MUST upgrade in 14 days.
+9. BREACH: Terminate immediately, takedown, still owes payment, legal action.
+10. OWNERSHIP: ZEUGA remains owner/creator unless FULL OWNERSHIP ticked.
+11. ENTIRE AGREEMENT: Entire agreement. Verbal/WhatsApp not valid unless added in writing and signed.
+12. EXECUTION & COUNTERSIGNATURE: This agreement is executed by the Licensor. The Licensee shall execute Page 2 and return a copy together with proof of payment for confirmation. Upon confirmation of payment, this agreement shall be deemed fully executed by both parties.
+SIGNATURES - PAGE 2: ZEUGA: Chigemezu Bede Amadi | Signature: [Executed] | Date: ______ | BUYER: Full Name: ______ | Signature: ______ | Date: ______ | WITNESS: ______`,
+PLUS:`BEAT LICENSE AGREEMENT - PREMIUM PLUS LICENSE - $100 / ₦151,000 - POPULAR
+ZEUGA - MUSIC PRODUCER | ARTIST | MIX ENGINEER
+LICENSOR: Chigemezu Bede Amadi aka ZEUGA | 09162002581 / zeugaofficial@gmail.com
+1. THE BEAT - Beat Title: [Your Beat] File: MP3 + WAV + STEMS Producer Tag: ZEUGA
+2. TYPE: [X] PREMIUM PLUS - $100 / ₦151,000 - Non-Exclusive - 10,000 Distribution - 1,000,000 Streams - 1,000,000 Video Streams - Stems
+3. PAYMENT: ₦151,000 | Access Bank Plc | Chigemezu Bede Amadi | 0104817244 | Rate: $1 = ₦1,510 | No payment = No license.
+4. RIGHTS: Record vocals, Release on Spotify, Apple, Boomplay, Audiomack, YouTube, TikTok, Perform live/radio, 2 music videos, Monetize, Mix/arrange stems.
+5. RESTRICTIONS: Must NOT resell/lease beat/stems, claim to be producer, remove Producer Tag, use stems to create new beat to sell, use for adverts/movies without agreement.
+6. CREDIT: MUST credit "Produced by ZEUGA".
+7. ROYALTIES - 50% PRODUCER / SONGWRITER - 50% ARTIST: Producer (ZEUGA) Songwriter/Composer for beat. Artist Songwriter for lyrics/vocals. Artist MUST register ZEUGA as 50% songwriter with BMI, ASCAP, COSON, MCSN, PRS or any PRO and with distributor. License fee separate. Publishing separate forever. Master 100% to Artist.
+8. TERM: [ ] 2 Years [ ] 5 Years [ ] Unlimited Territory: Worldwide. Exceed limit = MUST upgrade in 14 days.
+9. BREACH: Terminate immediately, takedown, still owes payment, legal action.
+10. OWNERSHIP: ZEUGA remains owner/creator unless FULL OWNERSHIP ticked.
+11. ENTIRE AGREEMENT: Entire agreement. Verbal/WhatsApp not valid unless added in writing and signed.
+12. EXECUTION & COUNTERSIGNATURE: This agreement is executed by the Licensor. The Licensee shall execute Page 2 and return a copy together with proof of payment for confirmation. Upon confirmation of payment, this agreement shall be deemed fully executed by both parties.
+SIGNATURES - PAGE 2: ZEUGA: Chigemezu Bede Amadi | Signature: [Executed] | Date: ______ | BUYER: Full Name: ______ | Signature: ______ | Date: ______ | WITNESS: ______`,
+UNLIMITED:`BEAT LICENSE AGREEMENT - UNLIMITED LICENSE - $180 / ₦271,800
+ZEUGA - MUSIC PRODUCER | ARTIST | MIX ENGINEER
+LICENSOR: Chigemezu Bede Amadi aka ZEUGA | 09162002581 / zeugaofficial@gmail.com
+1. THE BEAT - Beat Title: [Your Beat] File: MP3 + WAV + STEMS Producer Tag: ZEUGA
+2. TYPE: [X] UNLIMITED - $180 / ₦271,800 - Non-Exclusive - Unlimited Distribution - Unlimited Streams - Unlimited Videos - Term Does Not Expire
+3. PAYMENT: ₦271,800 | Access Bank Plc | Chigemezu Bede Amadi | 0104817244 | Rate: $1 = ₦1,510 | No payment = No license.
+4. RIGHTS: Record vocals, Release on Spotify, Apple, Boomplay, Audiomack, YouTube, TikTok, Perform live/radio, Unlimited videos, Monetize, Mix/arrange stems.
+5. RESTRICTIONS: Must NOT resell/lease beat/stems, claim to be producer, remove Producer Tag, use stems to create new beat to sell.
+6. CREDIT: MUST credit "Produced by ZEUGA".
+7. ROYALTIES - 50% PRODUCER / SONGWRITER - 50% ARTIST: Producer (ZEUGA) Songwriter/Composer for beat. Artist Songwriter for lyrics/vocals. Artist MUST register ZEUGA as 50% songwriter with BMI, ASCAP, COSON, MCSN, PRS or any PRO and with distributor. License fee separate. Publishing separate forever. Master 100% to Artist.
+8. TERM: Term Does Not Expire Territory: Worldwide.
+9. BREACH: Terminate immediately, takedown, still owes payment, legal action.
+10. OWNERSHIP: ZEUGA remains owner/creator unless FULL OWNERSHIP ticked.
+11. ENTIRE AGREEMENT: Entire agreement. Verbal/WhatsApp not valid unless added in writing and signed.
+12. EXECUTION & COUNTERSIGNATURE: This agreement is executed by the Licensor. The Licensee shall execute Page 2 and return a copy together with proof of payment for confirmation. Upon confirmation of payment, this agreement shall be deemed fully executed by both parties.
+SIGNATURES - PAGE 2: ZEUGA: Chigemezu Bede Amadi | Signature: [Executed] | Date: ______ | BUYER: Full Name: ______ | Signature: ______ | Date: ______ | WITNESS: ______`,
+EXCLUSIVE:`BEAT LICENSE AGREEMENT - EXCLUSIVE LICENSE - MAKE AN OFFER
+ZEUGA - MUSIC PRODUCER | ARTIST | MIX ENGINEER
+LICENSOR: Chigemezu Bede Amadi aka ZEUGA | 09162002581 / zeugaofficial@gmail.com
+1. THE BEAT - Beat Title: [Your Beat] File: MP3 + WAV + STEMS Producer Tag: ZEUGA
+2. TYPE: [X] EXCLUSIVE - MAKE AN OFFER - Exclusive - Unlimited Units - Unlimited Streams - Beat Taken Down
+3. PAYMENT: Price: $ __________ / ₦ __________ (Negotiated) | Access Bank Plc | Chigemezu Bede Amadi | 0104817244 | Rate: $1 = ₦1,510 | No payment = No license.
+4. RIGHTS: Record vocals, Release everywhere, Perform live/radio, Unlimited videos, Monetize, Register for Content ID / BMI / ASCAP (with ZEUGA as 50% songwriter unless negotiated otherwise), TV/Film/Advert allowed.
+5. RESTRICTIONS: Must NOT resell beat itself as beat to another producer/artist. Must NOT claim to be producer.
+6. CREDIT: MUST credit "Produced by ZEUGA", unless negotiated otherwise for Exclusive.
+7. ROYALTIES - 50% PRODUCER / SONGWRITER - 50% ARTIST: Unless negotiated differently in writing for Exclusive. Artist MUST register ZEUGA as songwriter with BMI, ASCAP, COSON, MCSN, PRS or any PRO.
+8. TERM: Unlimited Territory: Worldwide.
+9. BREACH: Terminate immediately, takedown, still owes payment, legal action.
+10. OWNERSHIP: ZEUGA remains owner/creator unless FULL OWNERSHIP ticked and fully paid.
+11. ENTIRE AGREEMENT: Entire agreement. Verbal/WhatsApp not valid unless added in writing and signed.
+12. EXECUTION & COUNTERSIGNATURE: This agreement is executed by the Licensor. The Licensee shall execute Page 2 and return a copy together with proof of payment for confirmation. Upon confirmation of payment, this agreement shall be deemed fully executed by both parties.
+HOW TO BUY: Click MAKE AN OFFER on WhatsApp, tell Zeuga your offer, negotiate.
+SIGNATURES - PAGE 2: ZEUGA: Chigemezu Bede Amadi | Signature: [Executed] | Date: ______ | BUYER: Full Name: ______ | Signature: ______ | Date: ______ | WITNESS: ______`
 };
 function openReadLicense(key){
 let titles={MP3:"MP3 License",WAV:"MP3 + WAV License",PREMIUM:"Premium License",PLUS:"Premium Plus License",UNLIMITED:"Unlimited License",EXCLUSIVE:"Exclusive License"};
@@ -218,6 +327,8 @@ let pickBeat=""; let pickLicenseIndex=0;
 function openLicensePicker(beat){
 pickBeat=beat; pickLicenseIndex=0;
 document.getElementById('licPickBeat').innerText=beat;
+document.getElementById('dealBeat').innerText=beat;
+document.getElementById('dealBeatInput').value=beat;
 let html='';
 LICENSES.forEach((l,i)=>{
 let priceTxt = l.usd===0 ? 'MAKE AN OFFER' : '$'+l.usd+' • '+fmt(l.usd*RATE);
@@ -226,12 +337,15 @@ html+='<div class="licPickRow '+(i===0?'sel':'')+'" onclick="selectLicPick('+i+'
 document.getElementById('licPickList').innerHTML=html;
 document.getElementById('licPickBox').style.display='flex';
 }
-function selectLicPick(i,el){pickLicenseIndex=i; document.querySelectorAll('.licPickRow').forEach(r=>r.classList.remove('sel')); el.classList.add('sel');}
+function selectLicPick(i,el){pickLicenseIndex=i; document.querySelectorAll('.licPickRow').forEach(r=>r.classList.remove('sel')); el.classList.add('sel');
+let lic=LICENSES[i]; document.getElementById('dealLicense').innerText=lic.name; document.getElementById('dealAmount').innerText=lic.usd===0?'MAKE AN OFFER':'$'+lic.usd+' • '+fmt(lic.usd*RATE); document.getElementById('dealLicenseInput').value=lic.name+' - '+(lic.usd===0?'MAKE AN OFFER':'$'+lic.usd); }
 function closeLicensePicker(){document.getElementById('licPickBox').style.display='none';}
 function confirmLicense(){
 let lic=LICENSES[pickLicenseIndex];
+let agree=document.getElementById('agreeCheckBox');
+if(agree && !agree.checked){ alert('Please tick "I agree to ZEUGA License Agreement" before you continue.'); return; }
 document.getElementById('licPickBox').style.display='none';
-if(lic.usd===0){ window.open('https://wa.me/2349162002581?text='+encodeURIComponent('I want to make an offer for Exclusive License for beat: '+pickBeat),'_blank'); return; }
+if(lic.usd===0){ window.open('https://wa.me/2349162002581?text='+encodeURIComponent('Business Enquiry - Exclusive License - Beat: '+pickBeat),'_blank'); return; }
 openPay(pickBeat+' - '+lic.name, lic.usd);
 }
 function fmt(n){return '₦'+n.toLocaleString('en-NG')}
@@ -258,7 +372,48 @@ function startTimer(){ clearInterval(timerInterval); timeLeft=1800; updateTimer(
 function updateTimer(){ let m=Math.floor(timeLeft/60); let s=timeLeft%60; document.getElementById('timer').innerText=(m<10?'0'+m:m)+':'+(s<10?'0'+s:s); document.getElementById('timer').classList.remove('expired'); document.getElementById('timerMsg').innerText='Timer is running. Send receipt after you pay.';}
 function restartTimer(){ document.getElementById('paidBtn').style.display='block'; document.getElementById('restartBtn').style.display='none'; startTimer();}
 function copyAcc(){ navigator.clipboard.writeText('0104817244'); alert('Account Number Copied: 0104817244');}
-function iHavePaid(){ clearInterval(timerInterval); let msg='Hello Zeuga, I HAVE PAID ✅%0AItem: '+encodeURIComponent(currentItem)+'%0ADollar: $'+currentAmount+'%0ANaira: '+encodeURIComponent(fmt(currentAmount*RATE))+'%0ABank: Access Bank Plc%0AAccount: Chigemezu Bede Amadi - 0104817244%0AHere is my receipt 👇'; window.open('https://wa.me/2349162002581?text='+msg,'_blank'); closePay();}
+function openAgreeBox(){ document.getElementById('agreeBox').style.display='flex'; }
+function closeAgreeBox(){ document.getElementById('agreeBox').style.display='none'; }
+function downloadAgreement(){
+let name=document.getElementById('agBuyerName') ? document.getElementById('agBuyerName').value : '';
+let stage=document.getElementById('agStageName') ? document.getElementById('agStageName').value : '';
+let wa=document.getElementById('agWhatsApp') ? document.getElementById('agWhatsApp').value : '';
+let em=document.getElementById('agEmail') ? document.getElementById('agEmail').value : '';
+let rec=document.getElementById('agReceipt') ? document.getElementById('agReceipt').value : '';
+let dt=document.getElementById('agDate') ? document.getElementById('agDate').value : '';
+let text='ZEUGA - BEAT LICENSE AGREEMENT\n\nLICENSOR (Producer / Songwriter): Chigemezu Bede Amadi aka ZEUGA\nWhatsApp: 09162002581 | Email: zeugaofficial@gmail.com\nBank: Access Bank Plc | Account Name: Chigemezu Bede Amadi | Account No: 0104817244\n\nLICENSEE (Buyer / Artist):\nFull Name: '+name+'\nStage Name: '+stage+'\nWhatsApp: '+wa+'\nEmail: '+em+'\nDate: '+dt+'\nReceipt No: '+rec+'\n\nITEM: '+currentItem+'\nAmount: $'+currentAmount+' | Naira: '+fmt(currentAmount*RATE)+'\n\nLICENSES: MP3 $20 / N30,200 | MP3+WAV $35 / N52,850 | Premium $70 / N105,700 | Premium Plus $100 / N151,000 | Unlimited $180 / N271,800 | Exclusive MAKE AN OFFER\n\nTERMS:\n1. THE BEAT - Beat Title as in Item above. Producer Tag: ZEUGA\n2. TYPE OF LICENSE - As in Item above.\n3. PAYMENT - No Payment = No License. Beat will not be released until receipt is confirmed.\n4. RIGHTS - Record vocals, Release on Spotify, Apple, Boomplay, Audiomack, YouTube, TikTok, Perform live/radio, 1 music video, Monetize.\n5. RESTRICTIONS - Must NOT resell/lease beat, claim to be producer, remove Producer Tag, use for adverts/movies without agreement, use license for another beat.\n6. PRODUCER CREDIT - MUST credit "Produced by ZEUGA" on all releases.\n7. ROYALTIES - 50% PRODUCER / SONGWRITER - 50% ARTIST: Producer (ZEUGA) is Songwriter/Composer for beat. Artist is Songwriter for lyrics/vocals. Artist MUST register ZEUGA as 50% songwriter with BMI, ASCAP, COSON, MCSN, PRS or any PRO and with distributor. License fee separate. Publishing separate forever. Master 100% to Artist.\n8. TERM & TERRITORY - As per selected tier. Territory: Worldwide. Exceed limit = MUST upgrade in 14 days.\n9. BREACH - Licensor may terminate immediately, request takedown, Licensee still owes payment, Licensor may take legal action.\n10. OWNERSHIP - ZEUGA remains original owner/creator unless FULL OWNERSHIP ticked.\n11. ENTIRE AGREEMENT - This document is entire agreement. Verbal/WhatsApp not valid unless added in writing and signed.\n12. EXECUTION & COUNTERSIGNATURE - This agreement is executed by the Licensor. The Licensee shall execute Page 2 and return a copy together with proof of payment for confirmation. Upon confirmation of payment, this agreement shall be deemed fully executed by both parties.\n\nSIGNATURES - PAGE 2:\nLICENSOR (ZEUGA): Signature [Executed] Full Name: Chigemezu Bede Amadi Date __________\nLICENSEE (BUYER): Signature ___________________ Full Name: '+name+' Date __________\nWITNESS: Name / Signature ___________________ Date __________\n\nThis agreement shall become effective upon confirmation of payment by the Licensor.\n';
+let blob=new Blob([text],{type:'text/plain'});
+let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='ZEUGA-Beat-License-Agreement.txt'; a.click();
+alert('Agreement downloaded. Complete Page 1, sign Page 2 and return a copy with proof of payment for confirmation.');
+}
+function sendAgreementWhatsApp(){
+let name=document.getElementById('agBuyerName').value;
+let stage=document.getElementById('agStageName').value;
+let wa=document.getElementById('agWhatsApp').value;
+let em=document.getElementById('agEmail').value;
+let rec=document.getElementById('agReceipt').value;
+let msg='Business Enquiry - Beat License Agreement%0AItem: '+encodeURIComponent(currentItem)+'%0ADollar: $'+currentAmount+'%0ANaira: '+encodeURIComponent(fmt(currentAmount*RATE))+'%0AFull Name: '+encodeURIComponent(name)+'%0AStage Name: '+encodeURIComponent(stage)+'%0AWhatsApp: '+encodeURIComponent(wa)+'%0AEmail: '+encodeURIComponent(em)+'%0AReceipt No: '+encodeURIComponent(rec)+'%0A%0ADeal: ZEUGA retains 50% Publishing as Producer/Songwriter. Credit: Produced by ZEUGA. Signed copy with proof of payment attached for confirmation.';
+window.open('https://wa.me/2349162002581?text='+msg,'_blank');
+}
+function iHavePaid(){ clearInterval(timerInterval); closePay(); openAgreeBox(); }
+function sendBusinessDeal(){
+let name=document.getElementById('dealName').value;
+let beat=document.getElementById('dealBeatInput').value || currentItem;
+let lic=document.getElementById('dealLicenseInput').value;
+let rec=document.getElementById('dealReceipt').value;
+let extra=document.getElementById('businessMsg').value;
+let msg='Business Enquiry - Deal%0AFull Name: '+encodeURIComponent(name)+'%0ABeat: '+encodeURIComponent(beat)+'%0ALicense: '+encodeURIComponent(lic)+'%0AReceipt No: '+encodeURIComponent(rec)+'%0AMessage: '+encodeURIComponent(extra)+'%0A%0ADeal Terms: Payment confirms deal. No payment = No deal. Agreement must be signed and returned with proof of payment. Upon confirmation, licensed files shall be released.';
+window.open('https://wa.me/2349162002581?text='+msg,'_blank');
+}
+function copyBusinessMsg(){
+let beat=document.getElementById('dealBeatInput').value || currentItem;
+let lic=document.getElementById('dealLicenseInput').value;
+let rec=document.getElementById('dealReceipt').value;
+let t='Business Enquiry - Deal. Beat: '+beat+', License: '+lic+', Receipt No: '+rec+'. Payment confirms deal. Agreement must be signed and returned with proof of payment.';
+document.getElementById('businessMsg').value=t;
+navigator.clipboard.writeText(t);
+alert('Business message copied');
+}
 </script>
 </body>
 </html>
