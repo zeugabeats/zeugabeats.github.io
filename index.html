@@ -15,6 +15,7 @@ header .logo span{color:#D4AF37}
 .supBtn{background:#fff;color:#000;border:0;padding:9px 12px;border-radius:0;font-weight:bold;cursor:pointer;font-size:13px;text-decoration:none}
 .tagline{text-align:center;color:#D4AF37;font-weight:900;font-size:13px;padding:10px 0 0;letter-spacing:1px}
 .subtag{text-align:center;color:#8ea3b8;font-size:11px;padding:2px 0 10px;letter-spacing:2px;font-weight:bold}
+.christmas{text-align:center;background:#D4AF37;color:#000;font-weight:900;font-size:12px;padding:8px 10px}
 .hero{text-align:center;padding:20px}
 .hero h2{font-size:26px}
 .hero h2 span{color:#D4AF37}
@@ -97,10 +98,12 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 </head>
 <body>
 
-<header><div class="logo">Zeuga<span> 🧢</span></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
+<div class="christmas">🎄 Merry Christmas In Advance From Zeuga • BEDE INC 🎄</div>
+
+<header><div class="logo">ZEUGA <span>🎅</span></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
 <div class="tagline">BELIEVE • ELEVATE • DOMINATE • EMPIRE</div><div class="subtag">BEDE INC</div>
 
-<div class="hero"><h2>🔥 Fresh Beats <span>Out Now</span></h2><p>Preview free. Choose your license. Click Buy.<br></p></div>
+<div class="hero"><h2>Original Beats. <span>Clear Licensing.</span></h2><p>Listen. License. Own your sound.</p></div>
 
 <div class="beats">
 <div class="card"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200"><div class="info"><h3>Lagos Night</h3><span>Afrobeat • 112 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openLicensePicker('Lagos Night')">Buy</button><button class="add" onclick="addToCart('Lagos Night',20)">+ Cart</button></div></div></div>
@@ -154,7 +157,6 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 <div id="readLicBox"><div class="payInner" style="text-align:left">
 <h2 style="text-align:center">License Terms - <span id="readLicTitle">MP3</span></h2>
 <p id="readLicBody" style="font-size:13px;line-height:1.7;color:#cbd5e1;margin-top:12px;white-space:pre-line"></p>
-<div class="agreeCheck"><label><input type="checkbox" id="agreeCheckBoxRead"> I have read and agreed to Zeuga License Agreement</label><br><br><button class="btn btn-green" onclick="agreeFromRead()">✅ I AGREE</button></div>
 <button class="btn" onclick="closeReadLicense()">Close</button>
 </div></div>
 
@@ -194,7 +196,7 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 <button class="btn" style="background:transparent;border:1px solid #2a2200;color:#fff" onclick="closeCart()">Close</button>
 </div></div>
 
-<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=I%20need%20custom%20beat">Chat Zeuga on WhatsApp</a><br><br><span class="bede">© 2026 BEDE INC</span><br>BELIEVE • ELEVATE • DOMINATE • EMPIRE<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://tiktok.com/@zeugaofficial">@zeugaofficial</a></footer>
+<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=I%20need%20custom%20beat">Chat Zeuga on WhatsApp</a><br><br>🎄 Merry Christmas & Happy New Year In Advance — From BEDE INC 🎄<br><br><span class="bede">© 2026 BEDE INC</span><br>BELIEVE • ELEVATE • DOMINATE • EMPIRE<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://tiktok.com/@zeugaofficial">@zeugaofficial</a></footer>
 
 <script>
 const RATE=1510;
@@ -222,7 +224,6 @@ document.getElementById('readLicBody').innerText=LICENSE_TERMS[key];
 document.getElementById('readLicBox').style.display='flex';
 }
 function closeReadLicense(){document.getElementById('readLicBox').style.display='none';}
-function agreeFromRead(){ document.getElementById('agreeCheckBoxRead').checked=true; document.getElementById('agreeCheckBox').checked=true; agreed=true; alert('You have agreed to Zeuga License Agreement'); closeReadLicense(); }
 let pickBeat=""; let pickLicenseIndex=0;
 function openLicensePicker(beat){
 pickBeat=beat; pickLicenseIndex=0;
@@ -259,6 +260,7 @@ function removeItem(i){cart.splice(i,1); document.getElementById('cartCount').in
 function clearCart(){cart=[]; document.getElementById('cartCount').innerText='0'; renderCart();}
 function checkoutPay(){
 if(cart.length===0){alert('Cart is empty');return;}
+if(!agreed){ alert('Please press Buy on any beat and tick "I have read and agreed to Zeuga License Agreement" first before checkout.'); closeCart(); return; }
 let total=0; let names='';
 cart.forEach(it=>{total+=it.usd; names+=it.name+', ';});
 closeCart();
