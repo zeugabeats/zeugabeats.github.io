@@ -7,9 +7,12 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{background:#060a12;color:white}
-header{position:sticky;top:0;z-index:50;background:#060a12;padding:14px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2a2200}
-header .logo{font-size:28px;font-weight:900;letter-spacing:1px}
+header{position:sticky;top:0;z-index:50;background:#060a12;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2a2200}
+.header-left{display:flex;align-items:center;gap:10px}
+.dp{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #D4AF37;flex-shrink:0}
+header .logo{font-size:26px;font-weight:900;letter-spacing:1px;line-height:1}
 header .logo span{color:#D4AF37}
+.header-sub{font-size:9px;color:#D4AF37;font-weight:900;letter-spacing:1px;margin-top:2px}
 .h-right{display:flex;gap:8px;align-items:center}
 .cartBtn{background:#D4AF37;color:#000;border:0;padding:9px 12px;border-radius:0;font-weight:bold;cursor:pointer;font-size:13px}
 .supBtn{background:#fff;color:#000;border:0;padding:9px 12px;border-radius:0;font-weight:bold;cursor:pointer;font-size:13px;text-decoration:none}
@@ -68,7 +71,6 @@ header .logo span{color:#D4AF37}
 .btn{display:block;background:#D4AF37;color:#000;text-align:center;padding:12px;border-radius:0;font-weight:900;margin-top:10px;text-decoration:none;cursor:pointer;border:0;width:100%}
 .btn-white{background:#fff;color:#000}
 .btn-green{background:#25D366;color:#fff}
-.btn-outline{background:transparent;border:1px solid #D4AF37;color:#D4AF37}
 input,select,textarea{width:100%;padding:12px;border-radius:0;border:0;background:#0f1a26;color:#fff;margin:6px 0;border:1px solid #2a2200}
 #payBox,#cartBox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.88);z-index:99;align-items:center;justify-content:center;padding:15px}
 .payInner{background:#0f1a26;border:2px solid #D4AF37;border-radius:0;padding:20px;max-width:420px;width:100%;text-align:center;max-height:92vh;overflow:auto}
@@ -98,7 +100,7 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 
 <div class="christmas">🎄 Merry Christmas In Advance From Zeuga • BEDE INC 🎄</div>
 
-<header><div class="logo">ZEUGA <span>🎅</span></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
+<header><div class="header-left"><img class="dp" src="profile.jpg" alt="Zeuga"><div><div class="logo">ZEUGA <span>🎅</span></div><div class="header-sub">ARTIST • PRODUCER</div></div></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
 <div class="tagline">BELIEVE • ELEVATE • DOMINATE • EMPIRE</div><div class="subtag">BEDE INC</div>
 
 <div class="hero"><h2>Original Beats. <span>Clear Licensing.</span></h2><p>Listen. License. Own your sound.</p></div>
