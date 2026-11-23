@@ -235,7 +235,11 @@ if(lic.usd===0){ window.open('https://wa.me/2349162002581?text='+encodeURICompon
 openPay(pickBeat+' - '+lic.name, lic.usd);
 }
 function fmt(n){return '₦'+n.toLocaleString('en-NG')}
-function addToCart(name,usd){cart.push({name:name,usd:usd}); document.getElementById('cartCount').innerText=cart.length; alert(name+' added to cart');}
+function addToCart(name,usd){
+let already = cart.find(it=>it.name===name);
+if(already){ alert(name+' is already in your cart'); openCart(); return; }
+cart.push({name:name,usd:usd}); document.getElementById('cartCount').innerText=cart.length; alert(name+' added to cart');
+}
 function openCart(){ renderCart(); document.getElementById('cartBox').style.display='flex';}
 function closeCart(){ document.getElementById('cartBox').style.display='none';}
 function renderCart(){ let list=document.getElementById('cartList'); if(cart.length===0){list.innerHTML='<p style="color:#8ea3b8;font-size:13px;margin:12px 0">Cart is empty. Press + Cart for any beat.</p>'; document.getElementById('cartTotal').innerText=''; return;} list.innerHTML=''; let total=0; cart.forEach((it,i)=>{total+=it.usd; list.innerHTML+='<div class="cartItem"><span>'+it.name+'</span><span><b>$'+it.usd+'</b> • '+fmt(it.usd*RATE)+' <button onclick="removeItem('+i+')">x</button></span></div>';}); document.getElementById('cartTotal').innerHTML='Total: $'+total+' • '+fmt(total*RATE)+'<br><span style="font-size:12px;color:#8ea3b8;font-weight:400">Rate $1 = ₦1,510</span>';}
