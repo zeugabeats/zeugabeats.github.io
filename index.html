@@ -157,6 +157,7 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 <div id="readLicBox"><div class="payInner" style="text-align:left">
 <h2 style="text-align:center">License Terms - <span id="readLicTitle">MP3</span></h2>
 <p id="readLicBody" style="font-size:13px;line-height:1.7;color:#cbd5e1;margin-top:12px;white-space:pre-line"></p>
+<a class="btn" href="ZEUGA-Beat-License-Agreement.pdf" download>⬇️ DOWNLOAD PDF AGREEMENT (SIGNED)</a>
 <button class="btn" onclick="downloadAgreement()">⬇️ DOWNLOAD FULL AGREEMENT</button>
 <button class="btn" onclick="closeReadLicense()">Close</button>
 </div></div>
@@ -164,7 +165,7 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 <h2>Choose License - <span id="licPickBeat">Beat</span></h2>
 <p style="color:#8ea3b8;font-size:13px;margin-top:6px">Select 1 of the 6 license deals before you proceed to payment.</p>
 <div id="licPickList"></div>
-<div class="agreeCheck"><label><input type="checkbox" id="agreeCheckBox"> I have read and agree to the ZEUGA Beat License Agreement. I understand ZEUGA retains 50% Publishing as Producer/Songwriter, and I must credit "Produced by ZEUGA".</label></div>
+<div class="agreeCheck"><label><input type="checkbox" id="agreeCheckBox"> I have read and agreed to Zeuga License Agreement</label><br><br><button class="btn btn-green" onclick="document.getElementById('agreeCheckBox').checked=true; alert('You have agreed to Zeuga License Agreement')">✅ I AGREE</button></div>
 <button class="btn" onclick="confirmLicense()">Continue to Payment →</button>
 <button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closeLicensePicker()">Close</button>
 </div></div>
@@ -191,6 +192,7 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 <input id="agEmail" placeholder="Your Email *">
 <input id="agReceipt" placeholder="Transaction Reference / Receipt No">
 <input id="agDate" type="date">
+<a class="btn" href="ZEUGA-Beat-License-Agreement.pdf" download>⬇️ DOWNLOAD PDF AGREEMENT (SIGNED)</a>
 <button class="btn" onclick="downloadAgreement()">⬇️ DOWNLOAD AGREEMENT</button>
 <button class="btn btn-green" onclick="sendAgreementWhatsApp()">📩 SEND DETAILS + RECEIPT TO ZEUGA ON WHATSAPP</button>
 <button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closeAgreeBox()">Close</button>
@@ -203,7 +205,7 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 <button class="btn" onclick="clearCart()">Clear Cart</button>
 <button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closeCart()">Close</button>
 </div></div>
-<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=Business%20Enquiry%20-%20Custom%20Beat">Chat Zeuga on WhatsApp</a><br><br>© 2026 Zeuga • Bede Inc<br>Where Sound Becomes Feeling<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://tiktok.com/@zeugaofficial">@zeugaofficial</a><br><br><a href="#" onclick="openReadLicense('MP3');return false;">License Agreement</a> • <a href="#" onclick="openAgreeBox();return false;">Download Agreement</a></footer>
+<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=Business%20Enquiry%20-%20Custom%20Beat">Chat Zeuga on WhatsApp</a><br><br>© 2026 Zeuga • Bede Inc<br>Where Sound Becomes Feeling<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://tiktok.com/@zeugaofficial">@zeugaofficial</a><br><br><a href="#" onclick="openReadLicense('MP3');return false;">License Agreement</a> • <a href="#" onclick="openAgreeBox();return false;">Download Agreement</a> • <a href="ZEUGA-Beat-License-Agreement.pdf" download>Download PDF Agreement</a></footer>
 <script>
 const RATE=1510;
 let cart=[]; let currentItem="Item"; let currentAmount=20; let timeLeft=1800; let timerInterval=null;
@@ -343,7 +345,7 @@ function closeLicensePicker(){document.getElementById('licPickBox').style.displa
 function confirmLicense(){
 let lic=LICENSES[pickLicenseIndex];
 let agree=document.getElementById('agreeCheckBox');
-if(agree && !agree.checked){ alert('Please tick "I agree to ZEUGA License Agreement" before you continue.'); return; }
+if(agree && !agree.checked){ alert('Please tick "I have read and agreed to Zeuga License Agreement" before you continue.'); return; }
 document.getElementById('licPickBox').style.display='none';
 if(lic.usd===0){ window.open('https://wa.me/2349162002581?text='+encodeURIComponent('Business Enquiry - Exclusive License - Beat: '+pickBeat),'_blank'); return; }
 openPay(pickBeat+' - '+lic.name, lic.usd);
