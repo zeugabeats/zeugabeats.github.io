@@ -211,7 +211,12 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 
 <script>
 const RATE=1510;
-let cart=[]; let currentItem="Item"; let currentAmount=20; let timeLeft=1800; let timerInterval=null;
+let currentItem="Item"; let currentAmount=20; let timeLeft=1800; let timerInterval=null;
+let cart=[];
+try{ cart = JSON.parse(localStorage.getItem('zeuga_cart') || '[]'); }catch(e){ cart=[]; }
+function saveCart(){ localStorage.setItem('zeuga_cart', JSON.stringify(cart)); document.getElementById('cartCount').innerText = cart.length; }
+function loadCartCount(){ document.getElementById('cartCount').innerText = cart.length; }
+loadCartCount();
 const LICENSES=[
 {name:"MP3 License",usd:20,detail:"MP3 Only • 1,000 Distribution • 15,000 Streams • No Video • 1 Producer Tag on Beat",key:"MP3",limit:"Distribution Limit: 1,000 copies / sales • Audio Streams: 15,000 • Video Streams: 0 • No Music Video • Radio: 1 station, non-commercial only",delivery:"MP3 Only",term:"10 years"},
 {name:"MP3 + WAV License",usd:35,detail:"MP3 & WAV • 2,500 Distribution • 150,000 Streams • 150,000 Video Streams • 1 Producer Tag on Beat",key:"WAV",limit:"Distribution Limit: 2,500 • Audio Streams: 150,000 • Video Streams: 150,000 for 1 monetized music video • Radio: Up to 2 stations",delivery:"MP3 + WAV",term:"10 years"},
@@ -343,13 +348,13 @@ function fmt(n){return '₦'+n.toLocaleString('en-NG')}
 function addToCart(name,usd){
 let already = cart.find(it=>it.name===name);
 if(already){ alert(name+' is already in your cart'); openCart(); return; }
-cart.push({name:name,usd:usd}); document.getElementById('cartCount').innerText=cart.length; alert(name+' added to cart');
+cart.push({name:name,usd:usd}); saveCart(); alert(name+' added to cart');
 }
 function openCart(){ renderCart(); document.getElementById('agreeCart').checked=false; toggleCartBtn(); document.getElementById('cartBox').style.display='flex';}
 function closeCart(){ document.getElementById('cartBox').style.display='none';}
 function renderCart(){ let list=document.getElementById('cartList'); if(cart.length===0){list.innerHTML='<p style="color:#8ea3b8;font-size:13px;margin:12px 0">Cart is empty. Press + Cart for any beat.</p>'; document.getElementById('cartTotal').innerText=''; return;} list.innerHTML=''; let total=0; cart.forEach((it,i)=>{total+=it.usd; list.innerHTML+='<div class="cartItem"><span>'+it.name+'</span><span><b>$'+it.usd+'</b> • '+fmt(it.usd*RATE)+' <button onclick="removeItem('+i+')">x</button></span></div>';}); document.getElementById('cartTotal').innerHTML='Total: $'+total+' • '+fmt(total*RATE)+'<br><span style="font-size:12px;color:#8ea3b8;font-weight:400">Rate $1 = ₦1,510</span>';}
-function removeItem(i){cart.splice(i,1); document.getElementById('cartCount').innerText=cart.length; renderCart();}
-function clearCart(){cart=[]; document.getElementById('cartCount').innerText='0'; renderCart();}
+function removeItem(i){cart.splice(i,1); saveCart(); renderCart();}
+function clearCart(){cart=[]; saveCart(); renderCart();}
 function checkoutPay(){
 if(!document.getElementById('agreeCart').checked){ alert('Please tick I AGREE to the terms first before you Checkout.'); return; }
 if(cart.length===0){alert('Cart is empty');return;}
