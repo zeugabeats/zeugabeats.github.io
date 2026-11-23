@@ -94,8 +94,8 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 </head>
 <body>
 
-<header><div class="logo">Zeuga<span> ✓</span></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
-<div class="tagline">Where Sound Becomes Feeling</div><div class="subtag">Zeuga • BEDE INC • Lagos, Nigeria</div>
+<header><div class="logo">Zeuga<span> 🧢</span></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
+<div class="tagline"></div><div class="subtag"></div>
 
 <div class="hero"><h2>🔥 Fresh Beats <span>Out Now</span></h2><p>Preview free. Choose your license. Click Buy.<br></p></div>
 
@@ -178,10 +178,10 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 </div></div>
 
 <div id="cartBox"><div class="payInner">
-<h2>🛒 Your <span>Cart</span></h2><p style="color:#8ea3b8;font-size:13px;margin-top:6px">Do you want to buy more than one? Chat with Zeuga to negotiate mixing, discount, or bundle.</p>
+<h2>🛒 Your <span>Cart</span></h2><p style="color:#8ea3b8;font-size:13px;margin-top:6px">Your selected beats. Prices are fixed.</p>
 <div id="cartList"></div>
 <div id="cartTotal" style="font-weight:900;margin:12px 0"></div>
-<button class="btn btn-green" onclick="checkoutCart()">💬 Checkout - Chat With Zeuga To Negotiate</button>
+<button class="btn btn-green" onclick="checkoutPay()">✅ CHECKOUT - PAY NOW</button>
 <button class="btn" onclick="clearCart()">Clear Cart</button>
 <button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closeCart()">Close</button>
 </div></div>
@@ -245,7 +245,13 @@ function closeCart(){ document.getElementById('cartBox').style.display='none';}
 function renderCart(){ let list=document.getElementById('cartList'); if(cart.length===0){list.innerHTML='<p style="color:#8ea3b8;font-size:13px;margin:12px 0">Cart is empty. Press + Cart for any beat.</p>'; document.getElementById('cartTotal').innerText=''; return;} list.innerHTML=''; let total=0; cart.forEach((it,i)=>{total+=it.usd; list.innerHTML+='<div class="cartItem"><span>'+it.name+'</span><span><b>$'+it.usd+'</b> • '+fmt(it.usd*RATE)+' <button onclick="removeItem('+i+')">x</button></span></div>';}); document.getElementById('cartTotal').innerHTML='Total: $'+total+' • '+fmt(total*RATE)+'<br><span style="font-size:12px;color:#8ea3b8;font-weight:400">Rate $1 = ₦1,510</span>';}
 function removeItem(i){cart.splice(i,1); document.getElementById('cartCount').innerText=cart.length; renderCart();}
 function clearCart(){cart=[]; document.getElementById('cartCount').innerText='0'; renderCart();}
-function checkoutCart(){ if(cart.length===0){alert('Cart is empty');return;} let total=0; let msg='Hello Zeuga, I want to buy more than one / negotiate ✅%0A%0A'; cart.forEach(it=>{total+=it.usd; msg+='- '+encodeURIComponent(it.name)+' - $'+it.usd+' ('+encodeURIComponent(fmt(it.usd*RATE))+')%0A';}); msg+='%0ATotal: $'+total+' = '+encodeURIComponent(fmt(total*RATE))+'%0A%0AI want support / negotiate for mixing, discount, bundle. Please talk to me.'; window.open('https://wa.me/2349162002581?text='+msg,'_blank');}
+function checkoutPay(){
+if(cart.length===0){alert('Cart is empty');return;}
+let total=0; let names='';
+cart.forEach(it=>{total+=it.usd; names+=it.name+', ';});
+closeCart();
+openPay('Cart - '+cart.length+' beats ('+names+')', total);
+}
 function openPay(item,usd){ currentItem=item; currentAmount=usd; document.getElementById('payItem').innerText=item; document.getElementById('payDollar').innerText='$'+usd; document.getElementById('payNaira').innerText=fmt(usd*RATE); document.getElementById('payBox').style.display='flex'; document.getElementById('restartBtn').style.display='none'; document.getElementById('paidBtn').style.display='block'; startTimer();}
 function closePay(){ document.getElementById('payBox').style.display='none'; clearInterval(timerInterval);}
 function startTimer(){ clearInterval(timerInterval); timeLeft=1800; updateTimer(); timerInterval=setInterval(function(){ timeLeft--; updateTimer(); if(timeLeft<=0){ clearInterval(timerInterval); document.getElementById('timer').innerText='00:00'; document.getElementById('timer').classList.add('expired'); document.getElementById('timerMsg').innerText='Time expired. Press Pay Again to restart.'; document.getElementById('paidBtn').style.display='none'; document.getElementById('restartBtn').style.display='block'; } },1000);}
