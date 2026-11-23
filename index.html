@@ -92,15 +92,13 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 .licPickRow .rowTop span{color:#D4AF37;font-weight:900;white-space:nowrap;text-align:right;font-size:13px}
 .licPickRow small{color:#8ea3b8;display:block;margin-top:4px;line-height:1.5}
 #readLicBox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.88);z-index:101;align-items:center;justify-content:center;padding:15px}
-.agreeCheck{background:#060a12;border:1px solid #D4AF37;padding:12px;margin:10px 0;text-align:left;font-size:13px;line-height:1.5}
-.agreeCheck input{width:auto;margin-right:8px}
 </style>
 </head>
 <body>
 
 <div class="christmas">🎄 Merry Christmas In Advance From Zeuga • BEDE INC 🎄</div>
 
-<header><div class="logo">Zeuga <span>🎅</span></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
+<header><div class="logo">ZEUGA <span>🎅</span></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
 <div class="tagline">BELIEVE • ELEVATE • DOMINATE • EMPIRE</div><div class="subtag">BEDE INC</div>
 
 <div class="hero"><h2>Original Beats. <span>Clear Licensing.</span></h2><p>Listen. License. Own your sound.</p></div>
@@ -147,7 +145,7 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 <div class="section" id="buy">
 <h2>How To <span>Buy</span></h2><p class="sub">Simple and easy</p>
 <div class="s-card"><h3>1. Choose Beat / Service</h3><p>Press Buy or + Cart, the payment box will open</p></div>
-<div class="s-card"><h3>2. Agree To License + Pay - Access Bank Plc</h3><p>Read license, press I AGREE, then you go see account number. Complete within 30 minutes • Send receipt on WhatsApp</p></div>
+<div class="s-card"><h3>2. Pay - Access Bank Plc</h3><p>You go see account number direct. Complete within 30 minutes • Send receipt on WhatsApp</p></div>
 <div class="s-card"><h3>3. Receive Beat</h3><p>Via WhatsApp / Email — within 24h</p></div>
 <button class="btn" onclick="openPay('General Payment',20)">Pay Now - Access Bank Plc</button>
 <a class="btn btn-green" href="https://wa.me/2349162002581">WhatsApp Zeuga - 09162002581</a>
@@ -164,7 +162,6 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 <h2>Choose License - <span id="licPickBeat">Beat</span></h2>
 <p style="color:#8ea3b8;font-size:13px;margin-top:6px">Select 1 of the 6 license deals before you proceed to payment.</p>
 <div id="licPickList"></div>
-<div class="agreeCheck"><label><input type="checkbox" id="agreeCheckBox"> I have read and agreed to Zeuga License Agreement</label><br><br><button class="btn btn-green" onclick="document.getElementById('agreeCheckBox').checked=true; agreed=true; alert('You have agreed to Zeuga License Agreement')">✅ I AGREE</button></div>
 <button class="btn" onclick="confirmLicense()">Continue to Payment →</button>
 <button class="btn" style="background:transparent;border:1px solid #2a2200;color:#fff" onclick="closeLicensePicker()">Close</button>
 </div></div>
@@ -175,8 +172,7 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 <p id="payItem" style="color:#8ea3b8;font-size:14px;margin-top:8px">Item</p>
 <p style="font-size:14px;margin-top:10px"><b>Dollar:</b> <span id="payDollar">$20</span> &nbsp;|&nbsp; <b>Naira:</b> <span id="payNaira" style="color:#D4AF37;font-weight:900">₦30,200</span></p>
 <p style="font-size:12px;color:#8ea3b8">Rate: $1 = ₦1,510 • This is the Naira amount you will transfer</p>
-<div id="payAgreeWrap" class="agreeCheck"><label><input type="checkbox" id="agreeCheckBoxPay"> I have read and agreed to Zeuga License Agreement</label><br><br><button class="btn btn-green" onclick="agreeToPay()">✅ I AGREE - SHOW ACCOUNT NUMBER</button></div>
-<div id="payAccWrap" style="display:none">
+<div id="payAccWrap">
 <p style="font-size:13px;color:#8ea3b8;margin-top:8px">Complete your transfer within</p>
 <div id="timer" class="timer">30:00</div>
 <p id="timerMsg" style="font-size:13px;color:#8ea3b8">Timer is running. Send receipt after you pay.</p>
@@ -196,11 +192,11 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 <button class="btn" style="background:transparent;border:1px solid #2a2200;color:#fff" onclick="closeCart()">Close</button>
 </div></div>
 
-<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=I%20need%20custom%20beat">Chat Zeuga on WhatsApp</a><br><br>🎄 Merry Christmas & Happy New Year In Advance — From BEDE INC 🎄<br><br><span class="bede">© 2026 BEDE INC</span><br>BELIEVE • ELEVATE • DOMINATE • EMPIRE<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://tiktok.com/@zeuga1">@zeuga1</a></footer>
+<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=I%20need%20custom%20beat">Chat Zeuga on WhatsApp</a><br><br>🎄 Merry Christmas & Happy New Year In Advance — From BEDE INC 🎄<br><br><span class="bede">© 2026 BEDE INC</span><br>BELIEVE • ELEVATE • DOMINATE • EMPIRE<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://tiktok.com/@zeugaofficial">@zeugaofficial</a></footer>
 
 <script>
 const RATE=1510;
-let cart=[]; let currentItem="Item"; let currentAmount=20; let timeLeft=1800; let timerInterval=null; let agreed=false;
+let cart=[]; let currentItem="Item"; let currentAmount=20; let timeLeft=1800; let timerInterval=null;
 const LICENSES=[
 {name:"MP3 License",usd:20,detail:"MP3 Only • 1,000 Distribution • 15,000 Streams • No Video • 1 Producer Tag on Beat"},
 {name:"MP3 + WAV License",usd:35,detail:"MP3 & WAV • 2,500 Distribution • 150,000 Streams • 150,000 Video Streams • 1 Producer Tag on Beat"},
@@ -240,9 +236,6 @@ function selectLicPick(i,el){pickLicenseIndex=i; document.querySelectorAll('.lic
 function closeLicensePicker(){document.getElementById('licPickBox').style.display='none';}
 function confirmLicense(){
 let lic=LICENSES[pickLicenseIndex];
-let agree=document.getElementById('agreeCheckBox');
-if(!agreed && agree && !agree.checked){ alert('Please tick "I have read and agreed to Zeuga License Agreement" before you continue.'); return; }
-agreed=true;
 document.getElementById('licPickBox').style.display='none';
 if(lic.usd===0){ window.open('https://wa.me/2349162002581?text='+encodeURIComponent('I want to make an offer for Exclusive License for beat: '+pickBeat),'_blank'); return; }
 openPay(pickBeat+' - '+lic.name, lic.usd);
@@ -260,14 +253,12 @@ function removeItem(i){cart.splice(i,1); document.getElementById('cartCount').in
 function clearCart(){cart=[]; document.getElementById('cartCount').innerText='0'; renderCart();}
 function checkoutPay(){
 if(cart.length===0){alert('Cart is empty');return;}
-if(!agreed){ alert('Please press Buy on any beat and tick "I have read and agreed to Zeuga License Agreement" first before checkout.'); closeCart(); return; }
 let total=0; let names='';
 cart.forEach(it=>{total+=it.usd; names+=it.name+', ';});
 closeCart();
 openPay('Cart - '+cart.length+' beats ('+names+')', total);
 }
-function agreeToPay(){ document.getElementById('agreeCheckBoxPay').checked=true; agreed=true; document.getElementById('payAgreeWrap').style.display='none'; document.getElementById('payAccWrap').style.display='block'; alert('You have agreed to Zeuga License Agreement'); startTimer(); }
-function openPay(item,usd){ currentItem=item; currentAmount=usd; document.getElementById('payItem').innerText=item; document.getElementById('payDollar').innerText='$'+usd; document.getElementById('payNaira').innerText=fmt(usd*RATE); document.getElementById('payBox').style.display='flex'; document.getElementById('restartBtn').style.display='none'; document.getElementById('paidBtn').style.display='block'; if(agreed){ document.getElementById('payAgreeWrap').style.display='none'; document.getElementById('payAccWrap').style.display='block'; startTimer(); } else { document.getElementById('payAgreeWrap').style.display='block'; document.getElementById('payAccWrap').style.display='none'; clearInterval(timerInterval); document.getElementById('timer').innerText='30:00'; } }
+function openPay(item,usd){ currentItem=item; currentAmount=usd; document.getElementById('payItem').innerText=item; document.getElementById('payDollar').innerText='$'+usd; document.getElementById('payNaira').innerText=fmt(usd*RATE); document.getElementById('payBox').style.display='flex'; document.getElementById('restartBtn').style.display='none'; document.getElementById('paidBtn').style.display='block'; startTimer(); }
 function closePay(){ document.getElementById('payBox').style.display='none'; clearInterval(timerInterval);}
 function startTimer(){ clearInterval(timerInterval); timeLeft=1800; updateTimer(); timerInterval=setInterval(function(){ timeLeft--; updateTimer(); if(timeLeft<=0){ clearInterval(timerInterval); document.getElementById('timer').innerText='00:00'; document.getElementById('timer').classList.add('expired'); document.getElementById('timerMsg').innerText='Time expired. Press Pay Again to restart.'; document.getElementById('paidBtn').style.display='none'; document.getElementById('restartBtn').style.display='block'; } },1000);}
 function updateTimer(){ let m=Math.floor(timeLeft/60); let s=timeLeft%60; document.getElementById('timer').innerText=(m<10?'0'+m:m)+':'+(s<10?'0'+s:s); document.getElementById('timer').classList.remove('expired'); document.getElementById('timerMsg').innerText='Timer is running. Send receipt after you pay.';}
