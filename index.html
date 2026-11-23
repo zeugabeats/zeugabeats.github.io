@@ -82,6 +82,13 @@ input,select,textarea{width:100%;padding:12px;border-radius:10px;border:0;backgr
 .cartItem button{background:#ff4444;color:#fff;border:0;border-radius:6px;padding:4px 8px;cursor:pointer}
 footer{text-align:center;padding:25px;color:#8ea3b8;font-size:13px;border-top:1px solid #1a2a3a;line-height:1.6}
 footer a{color:#0095F6;text-decoration:none;font-weight:bold}
+/* LICENSE PICKER - NEW ONLY */
+#licPickBox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.88);z-index:100;align-items:center;justify-content:center;padding:15px}
+.licPickRow{background:#060a12;border:1px solid #1e324a;border-radius:12px;padding:12px;margin:8px 0;text-align:left;cursor:pointer}
+.licPickRow.sel{border:2px solid #0095F6;background:#0f2a44}
+.licPickRow b{color:#fff}
+.licPickRow span{color:#0095F6;font-weight:900;float:right}
+.licPickRow small{color:#8ea3b8;display:block;margin-top:4px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -92,38 +99,38 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 <div class="hero"><h2>🔥 Fresh Beats <span>Out Now</span></h2><p>Preview free. Choose your license. Buy via WhatsApp.<br>Where Sound Becomes Feeling</p></div>
 
 <div class="beats">
-<div class="card"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200"><div class="info"><h3>Lagos Night</h3><span>Afrobeat • 112 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openPay('Lagos Night',20)">Buy</button><button class="add" onclick="addToCart('Lagos Night',20)">+ Cart</button></div></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200"><div class="info"><h3>Shayo</h3><span>Amapiano • 110 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openPay('Shayo',20)">Buy</button><button class="add" onclick="addToCart('Shayo',20)">+ Cart</button></div></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200"><div class="info"><h3>Cruise</h3><span>Afrobeat • 100 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openPay('Cruise',20)">Buy</button><button class="add" onclick="addToCart('Cruise',20)">+ Cart</button></div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200"><div class="info"><h3>Lagos Night</h3><span>Afrobeat • 112 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openLicensePicker('Lagos Night')">Buy</button><button class="add" onclick="addToCart('Lagos Night',20)">+ Cart</button></div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200"><div class="info"><h3>Shayo</h3><span>Amapiano • 110 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openLicensePicker('Shayo')">Buy</button><button class="add" onclick="addToCart('Shayo',20)">+ Cart</button></div></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200"><div class="info"><h3>Cruise</h3><span>Afrobeat • 100 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openLicensePicker('Cruise')">Buy</button><button class="add" onclick="addToCart('Cruise',20)">+ Cart</button></div></div></div>
 </div>
 
 <div class="lic"><h2>Licensing <span>Info</span></h2><p class="sub">Prices start from $20 - Choose what fits you • Rate $1 = ₦1,510</p>
-<div class="lic-card"><h3>MP3 License</h3><div class="big">$20</div><div class="naira">₦30,200</div><small>Untagged MP3</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3 Only</li><li>• Distribution Limit 1,000</li><li>• 15,000 Audio Streams</li><li>• No Music Video</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openPay('MP3 License',20)">BUY MP3 LICENSE - $20</a><button class="btn btn-outline" onclick="addToCart('MP3 License',20)">+ Add to Cart</button><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
-<div class="lic-card"><h3>MP3 + WAV License</h3><div class="big">$35</div><div class="naira">₦52,850</div><small>Untagged MP3 + WAV</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3 & WAV</li><li>• Distribution Limit 2,500</li><li>• 150,000 Audio Streams</li><li>• 150,000 Video Streams</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openPay('MP3 + WAV License',35)">BUY MP3 + WAV - $35</a><button class="btn btn-outline" onclick="addToCart('MP3 + WAV License',35)">+ Add to Cart</button><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
-<div class="lic-card"><h3>Premium License</h3><div class="big">$70</div><div class="naira">₦105,700</div><small>Untagged MP3 + WAV</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3 & WAV</li><li>• Distribution Limit 5,000</li><li>• 500,000 Audio Streams</li><li>• 500,000 Video Streams</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openPay('Premium License',70)">BUY PREMIUM - $70</a><button class="btn btn-outline" onclick="addToCart('Premium License',70)">+ Add to Cart</button><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
-<div class="lic-card pop"><h3>⭐ POPULAR - Premium Plus</h3><div class="big">$100</div><div class="naira">₦151,000</div><small>Untagged MP3 + WAV + Stems</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3, WAV & Stems</li><li>• Distribution Limit 10,000</li><li>• 1,000,000 Audio Streams</li><li>• 1,000,000 Video Streams</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openPay('Premium Plus License',100)">BUY PREMIUM PLUS - $100</a><button class="btn btn-outline" style="border-color:#fff;color:#fff" onclick="addToCart('Premium Plus License',100)">+ Add to Cart</button><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
-<div class="lic-card"><h3>Unlimited License</h3><div class="big">$180</div><div class="naira">₦271,800</div><small>Untagged MP3 + WAV + Stems</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3, WAV & Stems</li><li>• Unlimited Distribution</li><li>• Unlimited Audio Streams</li><li>• Unlimited Video Streams</li><li>• Term does not expire</li></ul><a onclick="openPay('Unlimited License',180)">BUY UNLIMITED - $180</a><button class="btn btn-outline" onclick="addToCart('Unlimited License',180)">+ Add to Cart</button><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
+<div class="lic-card"><h3>MP3 License</h3><div class="big">$20</div><div class="naira">₦30,200</div><small>Untagged MP3</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3 Only</li><li>• Distribution Limit 1,000</li><li>• 15,000 Audio Streams</li><li>• No Music Video</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openPay('MP3 License',20)">BUY MP3 LICENSE - $20</a><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
+<div class="lic-card"><h3>MP3 + WAV License</h3><div class="big">$35</div><div class="naira">₦52,850</div><small>Untagged MP3 + WAV</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3 & WAV</li><li>• Distribution Limit 2,500</li><li>• 150,000 Audio Streams</li><li>• 150,000 Video Streams</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openPay('MP3 + WAV License',35)">BUY MP3 + WAV - $35</a><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
+<div class="lic-card"><h3>Premium License</h3><div class="big">$70</div><div class="naira">₦105,700</div><small>Untagged MP3 + WAV</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3 & WAV</li><li>• Distribution Limit 5,000</li><li>• 500,000 Audio Streams</li><li>• 500,000 Video Streams</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openPay('Premium License',70)">BUY PREMIUM - $70</a><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
+<div class="lic-card pop"><h3>⭐ POPULAR - Premium Plus</h3><div class="big">$100</div><div class="naira">₦151,000</div><small>Untagged MP3 + WAV + Stems</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3, WAV & Stems</li><li>• Distribution Limit 10,000</li><li>• 1,000,000 Audio Streams</li><li>• 1,000,000 Video Streams</li><li>• 1 Producer Tag on Beat</li></ul><a onclick="openPay('Premium Plus License',100)">BUY PREMIUM PLUS - $100</a><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
+<div class="lic-card"><h3>Unlimited License</h3><div class="big">$180</div><div class="naira">₦271,800</div><small>Untagged MP3 + WAV + Stems</small><ul><li>• Non-Exclusive License</li><li>• Receive MP3, WAV & Stems</li><li>• Unlimited Distribution</li><li>• Unlimited Audio Streams</li><li>• Unlimited Video Streams</li><li>• Term does not expire</li></ul><a onclick="openPay('Unlimited License',180)">BUY UNLIMITED - $180</a><div class="bulk">Bulk deals:<br><b>BUY 2 TRACKS, GET 1 FREE!</b></div></div>
 <div class="lic-card"><h3>Exclusive License</h3><div class="big">MAKE AN OFFER</div><small>Exclusive</small><ul><li>• Exclusive License</li><li>• Unlimited Units</li><li>• Beat Taken Down</li></ul><a href="https://wa.me/2349162002581?text=I%20wan%20make%20offer%20for%20Exclusive%20License">MAKE AN OFFER</a></div>
 </div>
 
 <div class="section" id="studio">
 <h2>🎙️ Studio <span>Services</span></h2><p class="sub">Recording, Mixing & Mastering Also Available</p>
 <div class="label">✅ If You Buy Beat From Zeuga• Bede Inc (You Save Money)</div>
-<div class="s-card"><div class="s-top"><div><h3>STARTER</h3><p>Beat + Recording</p></div><div class="s-price">$45<span class="s-old">$50</span><small>₦67,950</small></div></div><button class="btn" onclick="openPay('STARTER - Beat + Recording',45)">Book Starter →</button><button class="btn btn-outline" onclick="addToCart('STARTER',45)">+ Add to Cart</button></div>
-<div class="s-card"><div class="s-top"><div><h3>PRO</h3><p>Beat + Recording + Mixing</p></div><div class="s-price">$75<span class="s-old">$90</span><small>₦113,250</small></div></div><button class="btn" onclick="openPay('PRO - Beat + Recording + Mixing',75)">Book Pro →</button><button class="btn btn-outline" onclick="addToCart('PRO',75)">+ Add to Cart</button></div>
-<div class="s-card vip"><div class="s-top"><div><h3>FULL VIP ⭐ BEST DEAL</h3><p>Beat + Recording + Mixing + Mastering<br>Ready for Spotify / Boomplay</p></div><div class="s-price">$90<span class="s-old">$115</span><small>₦135,900</small></div></div><p style="font-size:12px;margin-top:8px">🔥 You save $25</p><button class="btn btn-white" onclick="openPay('FULL VIP',90)">Book Full VIP →</button><button class="btn btn-outline" style="border-color:#fff;color:#fff" onclick="addToCart('FULL VIP',90)">+ Add to Cart</button></div>
+<div class="s-card"><div class="s-top"><div><h3>STARTER</h3><p>Beat + Recording</p></div><div class="s-price">$45<span class="s-old">$50</span><small>₦67,950</small></div></div><button class="btn" onclick="openPay('STARTER - Beat + Recording',45)">Book Starter →</button></div>
+<div class="s-card"><div class="s-top"><div><h3>PRO</h3><p>Beat + Recording + Mixing</p></div><div class="s-price">$75<span class="s-old">$90</span><small>₦113,250</small></div></div><button class="btn" onclick="openPay('PRO - Beat + Recording + Mixing',75)">Book Pro →</button></div>
+<div class="s-card vip"><div class="s-top"><div><h3>FULL VIP ⭐ BEST DEAL</h3><p>Beat + Recording + Mixing + Mastering<br>Ready for Spotify / Boomplay</p></div><div class="s-price">$90<span class="s-old">$115</span><small>₦135,900</small></div></div><p style="font-size:12px;margin-top:8px">🔥 You save $25</p><button class="btn btn-white" onclick="openPay('FULL VIP',90)">Book Full VIP →</button></div>
 <div class="label">🎵 If You Bring Your Own Beat (Normal Price)</div>
-<div class="s-card"><div class="s-top"><div><h3>🎤 Recording</h3><p>Clean studio recording / session</p></div><div class="s-price">$30<small>₦45,300</small></div></div><button class="btn" onclick="openPay('Recording',30)">Book</button><button class="btn btn-outline" onclick="addToCart('Recording',30)">+ Add to Cart</button></div>
-<div class="s-card"><div class="s-top"><div><h3>🎚️ Mixing</h3><p>Vocals clean, beat loud / song</p></div><div class="s-price">$40<small>₦60,400</small></div></div><button class="btn" onclick="openPay('Mixing',40)">Book</button><button class="btn btn-outline" onclick="addToCart('Mixing',40)">+ Add to Cart</button></div>
-<div class="s-card"><div class="s-top"><div><h3>🔊 Mastering</h3><p>Final polish for Spotify / song</p></div><div class="s-price">$25<small>₦37,750</small></div></div><button class="btn" onclick="openPay('Mastering',25)">Book</button><button class="btn btn-outline" onclick="addToCart('Mastering',25)">+ Add to Cart</button></div>
-<div class="s-card"><div class="s-top"><div><h3>🔥 Full Service</h3><p>Record + Mix + Master / song • Save $15</p></div><div class="s-price">$80<small>₦120,800</small></div></div><button class="btn" onclick="openPay('Full Service',80)">Book</button><button class="btn btn-outline" onclick="addToCart('Full Service',80)">+ Add to Cart</button></div>
+<div class="s-card"><div class="s-top"><div><h3>🎤 Recording</h3><p>Clean studio recording / session</p></div><div class="s-price">$30<small>₦45,300</small></div></div><button class="btn" onclick="openPay('Recording',30)">Book</button></div>
+<div class="s-card"><div class="s-top"><div><h3>🎚️ Mixing</h3><p>Vocals clean, beat loud / song</p></div><div class="s-price">$40<small>₦60,400</small></div></div><button class="btn" onclick="openPay('Mixing',40)">Book</button></div>
+<div class="s-card"><div class="s-top"><div><h3>🔊 Mastering</h3><p>Final polish for Spotify / song</p></div><div class="s-price">$25<small>₦37,750</small></div></div><button class="btn" onclick="openPay('Mastering',25)">Book</button></div>
+<div class="s-card"><div class="s-top"><div><h3>🔥 Full Service</h3><p>Record + Mix + Master / song • Save $15</p></div><div class="s-price">$80<small>₦120,800</small></div></div><button class="btn" onclick="openPay('Full Service',80)">Book</button></div>
 </div>
 
 <div class="section" id="custom">
 <h2>🎹 Custom <span>Beat</span></h2><p class="sub">Tell Zeuga the vibe, e go cook am for you from scratch</p>
-<div class="s-card"><div class="s-top"><div><h3>Custom Beat - Basic</h3><p>1 beat • 2 revisions • MP3 + WAV</p></div><div class="s-price">$120<small>₦181,200</small></div></div><button class="btn" onclick="openPay('Custom Beat Basic',120)">Order Basic $120</button><button class="btn btn-outline" onclick="addToCart('Custom Beat Basic',120)">+ Add to Cart</button></div>
-<div class="s-card"><div class="s-top"><div><h3>Custom Beat - Standard</h3><p>1 beat + Stems • 3 revisions • WAV</p></div><div class="s-price">$200<small>₦302,000</small></div></div><button class="btn" onclick="openPay('Custom Beat Standard',200)">Order Standard $200</button><button class="btn btn-outline" onclick="addToCart('Custom Beat Standard',200)">+ Add to Cart</button></div>
-<div class="s-card vip"><div class="s-top"><div><h3>Custom Beat - Premium ⭐</h3><p>2 beats + Stems + Mix • Unlimited revisions</p></div><div class="s-price">$350<small>₦528,500</small></div></div><button class="btn btn-white" onclick="openPay('Custom Beat Premium',350)">Order Premium $350</button><button class="btn btn-outline" style="border-color:#fff;color:#fff" onclick="addToCart('Custom Beat Premium',350)">+ Add to Cart</button></div>
+<div class="s-card"><div class="s-top"><div><h3>Custom Beat - Basic</h3><p>1 beat • 2 revisions • MP3 + WAV</p></div><div class="s-price">$120<small>₦181,200</small></div></div><button class="btn" onclick="openPay('Custom Beat Basic',120)">Order Basic $120</button></div>
+<div class="s-card"><div class="s-top"><div><h3>Custom Beat - Standard</h3><p>1 beat + Stems • 3 revisions • WAV</p></div><div class="s-price">$200<small>₦302,000</small></div></div><button class="btn" onclick="openPay('Custom Beat Standard',200)">Order Standard $200</button></div>
+<div class="s-card vip"><div class="s-top"><div><h3>Custom Beat - Premium ⭐</h3><p>2 beats + Stems + Mix • Unlimited revisions</p></div><div class="s-price">$350<small>₦528,500</small></div></div><button class="btn btn-white" onclick="openPay('Custom Beat Premium',350)">Order Premium $350</button></div>
 <input placeholder="Your Name"><input placeholder="WhatsApp / Email">
 <select><option>Choose Service</option><option>Custom Beat $120</option><option>Custom Beat $200</option><option>Custom Beat $350</option><option>Mixing & Mastering $350</option></select>
 <textarea placeholder="Tell Zeuga the vibe you want..."></textarea>
@@ -139,3 +146,88 @@ footer a{color:#0095F6;text-decoration:none;font-weight:bold}
 <a class="btn btn-green" href="https://wa.me/2349162002581">WhatsApp Zeuga - 09162002581</a>
 <a class="btn" style="background:#fff;color:#0095F6" href="mailto:zeugaofficial@gmail.com">Email: zeugaofficial@gmail.com</a>
 </div>
+
+<div id="licPickBox"><div class="payInner">
+<h2>Choose License - <span id="licPickBeat">Beat</span></h2>
+<p style="color:#8ea3b8;font-size:13px;margin-top:6px">Select 1 of the 6 license deals before you proceed to payment.</p>
+<div id="licPickList"></div>
+<button class="btn" onclick="confirmLicense()">Continue to Payment →</button>
+<button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closeLicensePicker()">Close</button>
+</div></div>
+
+<div id="payBox"><div class="payInner">
+<h2>Pay Now - <span>Access Bank Plc</span></h2>
+<p style="color:#0095F6;font-weight:bold;font-size:13px;margin-top:4px">Where Sound Becomes Feeling</p>
+<p id="payItem" style="color:#8ea3b8;font-size:14px;margin-top:8px">Item</p>
+<p style="font-size:14px;margin-top:10px"><b>Dollar:</b> <span id="payDollar">$20</span> &nbsp;|&nbsp; <b>Naira:</b> <span id="payNaira" style="color:#0095F6;font-weight:900">₦30,200</span></p>
+<p style="font-size:12px;color:#8ea3b8">Rate: $1 = ₦1,510 • Na this Naira amount you go transfer</p>
+<p style="font-size:13px;color:#8ea3b8;margin-top:8px">Complete your transfer within</p>
+<div id="timer" class="timer">30:00</div>
+<p id="timerMsg" style="font-size:13px;color:#8ea3b8">Timer dey run. Send receipt after you pay.</p>
+<div class="acc"><b>Bank:</b> Access Bank Plc<br><b>Account Name:</b> Chigemezu Bede Amadi<br><b>Account Number:</b> 0104817244 <button class="copy" onclick="copyAcc()">Copy</button><br><span style="font-size:12px;color:#8ea3b8">Use your name as narration</span></div>
+<button id="paidBtn" class="btn btn-green" onclick="iHavePaid()">✅ I HAVE PAID - Send Receipt</button>
+<button class="btn" id="restartBtn" style="display:none;background:#ff4444" onclick="restartTimer()">⏱️ Time Expired - Pay Again</button>
+<button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closePay()">Close</button>
+</div></div>
+
+<div id="cartBox"><div class="payInner">
+<h2>🛒 Your <span>Cart</span></h2><p style="color:#8ea3b8;font-size:13px;margin-top:6px">You wan buy more than one? Chat Zeuga make una negotiate mixing, discount, bundle.</p>
+<div id="cartList"></div>
+<div id="cartTotal" style="font-weight:900;margin:12px 0"></div>
+<button class="btn btn-green" onclick="checkoutCart()">💬 Checkout - Chat Zeuga To Negotiate</button>
+<button class="btn" onclick="clearCart()">Clear Cart</button>
+<button class="btn" style="background:transparent;border:1px solid #1e324a" onclick="closeCart()">Close</button>
+</div></div>
+
+<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=I%20need%20custom%20beat">Chat Zeuga on WhatsApp</a><br><br>© 2026 Zeuga• Bede Inc<br>Where Sound Becomes Feeling<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://tiktok.com/@zeugaofficial">@zeugaofficial</a></footer>
+
+<script>
+const RATE=1510;
+let cart=[]; let currentItem="Item"; let currentAmount=20; let timeLeft=1800; let timerInterval=null;
+// 6 LICENSE DEALS - FROM YOUR CODE
+const LICENSES=[
+{name:"MP3 License",usd:20,detail:"MP3 Only • 1,000 Distribution • 15,000 Streams • No Video"},
+{name:"MP3 + WAV License",usd:35,detail:"MP3 & WAV • 2,500 Distribution • 150,000 Streams • 150,000 Video Streams"},
+{name:"Premium License",usd:70,detail:"MP3 & WAV • 5,000 Distribution • 500,000 Streams • 500,000 Video Streams"},
+{name:"Premium Plus License",usd:100,detail:"MP3, WAV & Stems • 10,000 Distribution • 1M Streams • 1M Video Streams ⭐ POPULAR"},
+{name:"Unlimited License",usd:180,detail:"MP3, WAV & Stems • Unlimited Distribution • Unlimited Streams • No Expiry"},
+{name:"Exclusive License",usd:0,detail:"Exclusive • Unlimited Units • Beat Taken Down • MAKE AN OFFER"}
+];
+let pickBeat=""; let pickLicenseIndex=0;
+function openLicensePicker(beat){
+pickBeat=beat; pickLicenseIndex=0;
+document.getElementById('licPickBeat').innerText=beat;
+let html='';
+LICENSES.forEach((l,i)=>{
+let priceTxt = l.usd===0 ? 'MAKE AN OFFER' : '$'+l.usd+' • '+fmt(l.usd*RATE);
+html+='<div class="licPickRow '+(i===0?'sel':'')+'" onclick="selectLicPick('+i+',this)"><b>'+l.name+' <span>'+priceTxt+'</span></b><small>'+l.detail+'</small></div>';
+});
+document.getElementById('licPickList').innerHTML=html;
+document.getElementById('licPickBox').style.display='flex';
+}
+function selectLicPick(i,el){pickLicenseIndex=i; document.querySelectorAll('.licPickRow').forEach(r=>r.classList.remove('sel')); el.classList.add('sel');}
+function closeLicensePicker(){document.getElementById('licPickBox').style.display='none';}
+function confirmLicense(){
+let lic=LICENSES[pickLicenseIndex];
+document.getElementById('licPickBox').style.display='none';
+if(lic.usd===0){ window.open('https://wa.me/2349162002581?text='+encodeURIComponent('I wan make offer for Exclusive License for beat: '+pickBeat),'_blank'); return; }
+openPay(pickBeat+' - '+lic.name, lic.usd);
+}
+function fmt(n){return '₦'+n.toLocaleString('en-NG')}
+function addToCart(name,usd){cart.push({name:name,usd:usd}); document.getElementById('cartCount').innerText=cart.length; alert(name+' added to cart 🛒');}
+function openCart(){ renderCart(); document.getElementById('cartBox').style.display='flex';}
+function closeCart(){ document.getElementById('cartBox').style.display='none';}
+function renderCart(){ let list=document.getElementById('cartList'); if(cart.length===0){list.innerHTML='<p style="color:#8ea3b8;font-size:13px;margin:12px 0">Cart empty. Press + Cart for any beat.</p>'; document.getElementById('cartTotal').innerText=''; return;} list.innerHTML=''; let total=0; cart.forEach((it,i)=>{total+=it.usd; list.innerHTML+='<div class="cartItem"><span>'+it.name+'</span><span><b>$'+it.usd+'</b> • '+fmt(it.usd*RATE)+' <button onclick="removeItem('+i+')">x</button></span></div>';}); document.getElementById('cartTotal').innerHTML='Total: $'+total+' • '+fmt(total*RATE)+'<br><span style="font-size:12px;color:#8ea3b8;font-weight:400">Rate $1 = ₦1,510</span>';}
+function removeItem(i){cart.splice(i,1); document.getElementById('cartCount').innerText=cart.length; renderCart();}
+function clearCart(){cart=[]; document.getElementById('cartCount').innerText='0'; renderCart();}
+function checkoutCart(){ if(cart.length===0){alert('Cart empty');return;} let total=0; let msg='Hello Zeuga, I want to buy more than one / negotiate ✅%0A%0A'; cart.forEach(it=>{total+=it.usd; msg+='- '+encodeURIComponent(it.name)+' - $'+it.usd+' ('+encodeURIComponent(fmt(it.usd*RATE))+')%0A';}); msg+='%0ATotal: $'+total+' = '+encodeURIComponent(fmt(total*RATE))+'%0A%0AI want support / negotiate for mixing, discount, bundle. Abeg talk to me.'; window.open('https://wa.me/2349162002581?text='+msg,'_blank');}
+function openPay(item,usd){ currentItem=item; currentAmount=usd; document.getElementById('payItem').innerText=item; document.getElementById('payDollar').innerText='$'+usd; document.getElementById('payNaira').innerText=fmt(usd*RATE); document.getElementById('payBox').style.display='flex'; document.getElementById('restartBtn').style.display='none'; document.getElementById('paidBtn').style.display='block'; startTimer();}
+function closePay(){ document.getElementById('payBox').style.display='none'; clearInterval(timerInterval);}
+function startTimer(){ clearInterval(timerInterval); timeLeft=1800; updateTimer(); timerInterval=setInterval(function(){ timeLeft--; updateTimer(); if(timeLeft<=0){ clearInterval(timerInterval); document.getElementById('timer').innerText='00:00'; document.getElementById('timer').classList.add('expired'); document.getElementById('timerMsg').innerText='Time expired. Press Pay Again to restart.'; document.getElementById('paidBtn').style.display='none'; document.getElementById('restartBtn').style.display='block'; } },1000);}
+function updateTimer(){ let m=Math.floor(timeLeft/60); let s=timeLeft%60; document.getElementById('timer').innerText=(m<10?'0'+m:m)+':'+(s<10?'0'+s:s); document.getElementById('timer').classList.remove('expired'); document.getElementById('timerMsg').innerText='Timer dey run. Send receipt after you pay.';}
+function restartTimer(){ document.getElementById('paidBtn').style.display='block'; document.getElementById('restartBtn').style.display='none'; startTimer();}
+function copyAcc(){ navigator.clipboard.writeText('0104817244'); alert('Account Number Copied: 0104817244');}
+function iHavePaid(){ clearInterval(timerInterval); let msg='Hello Zeuga, I HAVE PAID ✅%0AItem: '+encodeURIComponent(currentItem)+'%0ADollar: $'+currentAmount+'%0ANaira: '+encodeURIComponent(fmt(currentAmount*RATE))+'%0ABank: Access Bank Plc%0AAccount: Chigemezu Bede Amadi - 0104817244%0AHere be my receipt 👇'; window.open('https://wa.me/2349162002581?text='+msg,'_blank'); closePay();}
+</script>
+</body>
+</html>
