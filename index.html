@@ -9,31 +9,32 @@
 body{background:#060a12;color:white}
 header{position:sticky;top:0;z-index:50;background:#060a12;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2a2200}
 .header-left{display:flex;align-items:center;gap:10px}
-.dp{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #D4AF37;flex-shrink:0}
-header .logo{font-size:26px;font-weight:900;letter-spacing:1px;line-height:1}
+.dp{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #D4AF37;flex-shrink:0;background:#0f1a26}
+header .logo{font-size:26px;font-weight:900;letter-spacing:1px;line-height:1;text-transform:none}
 header .logo span{color:#D4AF37}
-.header-sub{font-size:9px;color:#D4AF37;font-weight:900;letter-spacing:1px;margin-top:2px}
+.header-sub{font-size:9px;color:#D4AF37;font-weight:900;letter-spacing:1px;margin-top:3px;white-space:nowrap}
 .h-right{display:flex;gap:8px;align-items:center}
 .cartBtn{background:#D4AF37;color:#000;border:0;padding:9px 12px;border-radius:0;font-weight:bold;cursor:pointer;font-size:13px}
 .supBtn{background:#fff;color:#000;border:0;padding:9px 12px;border-radius:0;font-weight:bold;cursor:pointer;font-size:13px;text-decoration:none}
 .tagline{text-align:center;color:#D4AF37;font-weight:900;font-size:13px;padding:10px 0 0;letter-spacing:1px}
 .subtag{text-align:center;color:#8ea3b8;font-size:11px;padding:2px 0 10px;letter-spacing:2px;font-weight:bold}
 .christmas{text-align:center;background:#D4AF37;color:#000;font-weight:900;font-size:12px;padding:8px 10px}
-.hero{text-align:center;padding:20px}
-.hero h2{font-size:26px}
+.hero{text-align:center;padding:16px 15px 10px}
+.hero h2{font-size:24px}
 .hero h2 span{color:#D4AF37}
-.hero p{color:#aaa;margin-top:8px;font-size:14px;line-height:1.5}
-.beats{max-width:500px;margin:0 auto;padding:0 15px 20px}
-.card{background:#0f1a26;border-radius:0;padding:15px;margin-bottom:15px;display:flex;gap:12px;align-items:center;border:1px solid #2a2200}
-.card img{width:75px;height:75px;border-radius:0;object-fit:cover;border:2px solid #D4AF37}
-.info{flex:1}
-.info h3{font-size:17px}
-.info span{color:#8ea3b8;font-size:12px}
-.price{font-weight:bold;margin:6px 0;color:#D4AF37;font-size:13px}
-.btns{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
-.play{background:#fff;color:#000;border:none;padding:8px 12px;border-radius:0;font-weight:bold;cursor:pointer;font-size:13px}
-.buy{background:#D4AF37;color:#000;border:0;padding:8px 12px;border-radius:0;font-weight:bold;font-size:13px;cursor:pointer}
-.add{background:transparent;color:#D4AF37;border:1px solid #D4AF37;padding:8px 12px;border-radius:0;font-weight:bold;font-size:13px;cursor:pointer}
+.hero p{color:#aaa;margin-top:6px;font-size:13px;line-height:1.5}
+/* COMPACT BEATSTORE - LINE BY LINE LIKE OZEDIKUS */
+.beats{max-width:500px;margin:0 auto;padding:0 12px 15px}
+.beatRow{background:#0f1a26;border:1px solid #1a2432;padding:8px 8px 8px 8px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.beatRow img{width:52px;height:52px;object-fit:cover;border:1px solid #D4AF37;flex-shrink:0}
+.beatInfo{flex:1;min-width:0}
+.beatInfo h3{font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.beatInfo span{color:#8ea3b8;font-size:11px;display:block;margin-top:2px}
+.beatInfo .bPrice{color:#D4AF37;font-size:12px;font-weight:bold;margin-top:2px}
+.beatBtns{display:flex;flex-direction:column;gap:5px;flex-shrink:0}
+.miniBuy{background:#D4AF37;color:#000;border:0;padding:7px 10px;font-weight:900;font-size:12px;cursor:pointer;min-width:62px}
+.miniCart{background:transparent;color:#D4AF37;border:1px solid #D4AF37;padding:6px 10px;font-weight:900;font-size:12px;cursor:pointer;min-width:62px}
+.miniPlay{background:#fff;color:#000;border:0;padding:6px 10px;font-weight:900;font-size:11px;cursor:pointer;min-width:62px}
 .lic{padding:20px 15px;max-width:500px;margin:0 auto}
 .lic h2{text-align:center;font-size:24px;margin-bottom:5px}
 .lic h2 span{color:#D4AF37}
@@ -100,15 +101,15 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 
 <div class="christmas">🎄 Merry Christmas In Advance From Zeuga • BEDE INC 🎄</div>
 
-<header><div class="header-left"><img class="dp" src="profile.jpg" alt="Zeuga"><div><div class="logo">ZEUGA <span>🎅</span></div><div class="header-sub">ARTIST • PRODUCER</div></div></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
+<header><div class="header-left"><img class="dp" src="profile.jpg" alt="" onerror="this.style.display='none'"><div><div class="logo">Zeuga <span>🎅</span></div><div class="header-sub">MUSIC PRODUCER | MIX ENGINEER</div></div></div><div class="h-right"><button class="cartBtn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button><a class="supBtn" href="https://wa.me/2349162002581?text=Hello%20Zeuga%2C%20I%20need%20support">💬 Support</a></div></header>
 <div class="tagline">BELIEVE • ELEVATE • DOMINATE • EMPIRE</div><div class="subtag">BEDE INC</div>
 
 <div class="hero"><h2>Original Beats. <span>Clear Licensing.</span></h2><p>Listen. License. Own your sound.</p></div>
 
 <div class="beats">
-<div class="card"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200"><div class="info"><h3>Lagos Night</h3><span>Afrobeat • 112 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openLicensePicker('Lagos Night')">Buy</button><button class="add" onclick="addToCart('Lagos Night',20)">+ Cart</button></div></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200"><div class="info"><h3>Shayo</h3><span>Amapiano • 110 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openLicensePicker('Shayo')">Buy</button><button class="add" onclick="addToCart('Shayo',20)">+ Cart</button></div></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200"><div class="info"><h3>Cruise</h3><span>Afrobeat • 100 BPM</span><div class="price">From $20 • ₦30,200</div><div class="btns"><button class="play" onclick="alert('Preview coming soon')">▶ Play</button><button class="buy" onclick="openLicensePicker('Cruise')">Buy</button><button class="add" onclick="addToCart('Cruise',20)">+ Cart</button></div></div></div>
+<div class="beatRow"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200"><div class="beatInfo"><h3>Lagos Night</h3><span>Afrobeat • 112 BPM</span><div class="bPrice">From $20 • ₦30,200</div></div><div class="beatBtns"><button class="miniPlay" onclick="alert('Preview coming soon')">▶ Play</button><button class="miniBuy" onclick="openLicensePicker('Lagos Night')">Buy</button><button class="miniCart" onclick="addToCart('Lagos Night',20)">+ Cart</button></div></div>
+<div class="beatRow"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200"><div class="beatInfo"><h3>Shayo</h3><span>Amapiano • 110 BPM</span><div class="bPrice">From $20 • ₦30,200</div></div><div class="beatBtns"><button class="miniPlay" onclick="alert('Preview coming soon')">▶ Play</button><button class="miniBuy" onclick="openLicensePicker('Shayo')">Buy</button><button class="miniCart" onclick="addToCart('Shayo',20)">+ Cart</button></div></div>
+<div class="beatRow"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200"><div class="beatInfo"><h3>Cruise</h3><span>Afrobeat • 100 BPM</span><div class="bPrice">From $20 • ₦30,200</div></div><div class="beatBtns"><button class="miniPlay" onclick="alert('Preview coming soon')">▶ Play</button><button class="miniBuy" onclick="openLicensePicker('Cruise')">Buy</button><button class="miniCart" onclick="addToCart('Cruise',20)">+ Cart</button></div></div>
 </div>
 
 <div class="lic"><h2>Licensing <span>Info</span></h2><p class="sub">Prices start from $20 - Choose what fits you</p>
@@ -194,7 +195,7 @@ footer .bede{color:#D4AF37;font-weight:900;font-size:16px;letter-spacing:1px}
 <button class="btn" style="background:transparent;border:1px solid #2a2200;color:#fff" onclick="closeCart()">Close</button>
 </div></div>
 
-<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=I%20need%20custom%20beat">Chat Zeuga on WhatsApp</a><br><br>🎄 Merry Christmas & Happy New Year In Advance — From BEDE INC 🎄<br><br><span class="bede">© 2026 BEDE INC</span><br>BELIEVE • ELEVATE • DOMINATE • EMPIRE<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://tiktok.com/@zeugaofficial">@zeugaofficial</a></footer>
+<footer>Need custom beat?<br><br><a href="https://wa.me/2349162002581?text=I%20need%20custom%20beat">Chat Zeuga on WhatsApp</a><br><br>🎄 Merry Christmas & Happy New Year In Advance — From BEDE INC 🎄<br><br><span class="bede">© 2026 BEDE INC</span><br>BELIEVE • ELEVATE • DOMINATE • EMPIRE<br><br>WhatsApp: 09162002581 • Email: zeugaofficial@gmail.com<br>TikTok: <a href="https://www.tiktok.com/@zeuga1">@zeuga1</a></footer>
 
 <script>
 const RATE=1510;
